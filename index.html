@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Recruiter portfolio for Mario Shyomal De Silva – Telecommunications Network Engineer, RF Planner, Fibre & IoT Engineer, Project Lead." />
+  <title>Mario Shyomal De Silva | Telecommunications Network Engineer</title>
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg2:#0b1728;
+      --panel:#0f1e31;
+      --panel2:#12253c;
+      --text:#edf5ff;
+      --muted:#a9bbcf;
+      --line:#203b58;
+      --accent:#58c7ff;
+      --accent2:#76e6c0;
+      --shadow:0 18px 50px rgba(0,0,0,.26);
+      --radius:22px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 5%, rgba(88,199,255,.12), transparent 30%),
+        radial-gradient(circle at 90% 15%, rgba(118,230,192,.10), transparent 26%),
+        linear-gradient(180deg,var(--bg),#081522 48%,#07101b);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 36px)); margin:auto}
+    .nav-wrap{
+      position:sticky;top:0;z-index:40;
+      backdrop-filter: blur(14px);
+      background:rgba(7,17,31,.82);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .avatar{
+      width:38px;height:38px;border-radius:12px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#062036;font-weight:900;
+      box-shadow:0 10px 26px rgba(88,199,255,.22);
+    }
+    .nav-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+    .nav-links a{font-size:14px;color:var(--muted)}
+    .nav-links a:hover{color:var(--text)}
+    .hero{padding:92px 0 56px}
+    .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:36px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid rgba(88,199,255,.24);
+      background:rgba(88,199,255,.08);
+      color:#c9efff;border-radius:999px;padding:7px 12px;
+      font-size:13px;font-weight:700;letter-spacing:.4px;
+    }
+    h1{font-size:clamp(42px,6vw,74px);line-height:1.03;margin:18px 0 14px;letter-spacing:-2.4px}
+    .gradient{background:linear-gradient(90deg,#fff 0%,#c6ecff 45%,#a7f4d9 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:clamp(19px,2.6vw,27px);line-height:1.35;color:#c9d7e6;max-width:880px;margin:0 0 18px}
+    .sublead{font-size:16px;color:var(--muted);max-width:820px;margin-bottom:26px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 20px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      border-radius:13px;padding:12px 17px;font-weight:800;font-size:14px;
+      border:1px solid var(--line);cursor:pointer;
+      background:#102239;color:var(--text)
+    }
+    .btn.primary{background:linear-gradient(135deg,var(--accent),#89d8ff);color:#062036;border:none}
+    .btn.secondary{background:rgba(255,255,255,.035)}
+    .btn:hover{transform:translateY(-1px)}
+    .pills{display:flex;gap:9px;flex-wrap:wrap}
+    .pill{padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:12px;color:#c9d7e6}
+    .hero-card{
+      background:linear-gradient(160deg,rgba(18,37,60,.94),rgba(11,27,45,.96));
+      border:1px solid rgba(255,255,255,.08);border-radius:28px;padding:27px;box-shadow:var(--shadow)
+    }
+    .hero-card h3{margin:0 0 14px;font-size:17px}
+    .metric{padding:15px 0;border-top:1px solid rgba(255,255,255,.08)}
+    .metric:first-of-type{border-top:none;padding-top:3px}
+    .metric strong{display:block;font-size:29px;line-height:1.15}
+    .metric span{color:var(--muted);font-size:13px}
+    section{padding:70px 0}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:28px}
+    .section-head h2{font-size:32px;margin:0;letter-spacing:-.8px}
+    .section-head p{color:var(--muted);max-width:650px;margin:0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:linear-gradient(180deg,rgba(15,30,49,.95),rgba(10,24,41,.95));
+      border:1px solid rgba(255,255,255,.075);border-radius:var(--radius);padding:24px;
+      box-shadow:0 12px 34px rgba(0,0,0,.15)
+    }
+    .card h3{margin:0 0 7px;font-size:20px}
+    .card .meta{color:var(--accent2);font-weight:700;font-size:13px;margin-bottom:11px}
+    .card p{color:#c6d3e1;margin:0}
+    .timeline{display:grid;gap:18px}
+    .job{display:grid;grid-template-columns:210px 1fr;gap:24px;padding:26px;background:rgba(12,27,45,.82);border:1px solid rgba(255,255,255,.07);border-radius:22px}
+    .job .date{color:var(--accent2);font-weight:800}
+    .job .place{color:var(--muted);font-size:13px;margin-top:6px}
+    .job h3{margin:0 0 2px;font-size:21px}
+    .job h4{margin:0 0 12px;color:#c9d7e6;font-size:15px;font-weight:600}
+    .job ul{margin:0;padding-left:18px;color:#c6d3e1}
+    .job li{margin:6px 0}
+    .project h3{font-size:18px}
+    .project .tag{display:inline-block;font-size:11px;font-weight:800;color:#bfefff;background:rgba(88,199,255,.08);border:1px solid rgba(88,199,255,.22);padding:4px 8px;border-radius:999px;margin-bottom:12px}
+    .skills-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .skill-card h3{margin:0 0 12px;font-size:17px}
+    .skill-list{display:flex;gap:8px;flex-wrap:wrap}
+    .skill-list span{border:1px solid var(--line);background:#0c1b2d;color:#cbd8e6;padding:7px 10px;border-radius:10px;font-size:12px}
+    .edu-row{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .edu-card small{color:var(--accent2);font-weight:800}
+    .edu-card h3{margin:7px 0 6px}
+    .visa{
+      background:
+        linear-gradient(135deg,rgba(88,199,255,.09),rgba(118,230,192,.08)),
+        #0c1b2d;
+      border:1px solid rgba(88,199,255,.25)
+    }
+    .visa-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .visa .point{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .visa .point:last-child{border-bottom:none}
+    .visa .point strong{display:block}
+    .visa .point span{color:var(--muted);font-size:13px}
+    .regions{display:flex;gap:10px;flex-wrap:wrap}
+    .region{padding:9px 12px;border-radius:12px;border:1px solid var(--line);color:#c8d6e4;background:#0b1a2b;font-size:13px}
+    .contact{
+      text-align:center;padding:42px;
+      background:linear-gradient(145deg,#0e2137,#102b3e);
+      border:1px solid rgba(255,255,255,.08);border-radius:28px
+    }
+    .contact h2{font-size:34px;margin:0 0 12px}
+    .contact p{color:var(--muted);max-width:700px;margin:0 auto 22px}
+    footer{padding:32px 0 46px;color:#7f95aa;font-size:13px;text-align:center}
+    .small-note{font-size:12px;color:#72889c;margin-top:10px}
+    .hide-print{}
+    @media (max-width:900px){
+      .hero-grid,.grid-2,.grid-3,.skills-wrap,.edu-row,.visa-grid{grid-template-columns:1fr}
+      .hero{padding-top:66px}
+      .hero-card{order:-1}
+      .job{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .section-head{display:block}
+      .section-head p{margin-top:8px}
+    }
+    @media print{
+      .nav-wrap,.hero-actions,.hide-print{display:none!important}
+      body{background:#fff;color:#111}
+      .card,.job,.hero-card,.contact,.visa{background:#fff;color:#111;box-shadow:none;border:1px solid #ccc}
+      .lead,.sublead,.card p,.job ul,.job h4,.metric span,.section-head p,.contact p,.visa .point span,.place{color:#333!important}
+      .pill,.skill-list span,.region{color:#111;background:#fff;border-color:#bbb}
+      .gradient{color:#111;background:none;-webkit-text-fill-color:#111}
+      a{color:#111}
+      section{padding:26px 0}
+      .hero{padding:25px 0}
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top"><span class="avatar">MS</span><span>Mario Shyomal De Silva</span></a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#work-rights">Work Rights</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Telecommunications Network Engineer • ANZSCO 263312</span>
+          <h1><span class="gradient">Mario Shyomal De Silva</span></h1>
+          <p class="lead">Telecommunications, RF, fibre, IoT and infrastructure engineer with 8+ years of regional project experience across Australia and Asia.</p>
+          <p class="sublead">Experienced in 2G/3G/4G/5G network planning, field engineering, coverage analysis, tower/site audits, fibre and backhaul planning, smart connected infrastructure, data analytics, technical coordination and end-to-end project delivery.</p>
+          <div class="hero-actions hide-print">
+            <a class="btn primary" href="#experience">View Experience</a>
+            <a class="btn secondary" href="#work-rights">Visa & Availability</a>
+            <button class="btn secondary" onclick="window.print()">Print / Save PDF</button>
+          </div>
+          <div class="pills">
+            <span class="pill">RF Planning & Optimisation</span>
+            <span class="pill">Fibre & Backhaul</span>
+            <span class="pill">LoRaWAN / 5G / IoT</span>
+            <span class="pill">Site Engineering</span>
+            <span class="pill">Project Delivery</span>
+            <span class="pill">Australia-wide Relocation</span>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Career Snapshot</h3>
+          <div class="metric"><strong>8+ years</strong><span>Telecommunications, engineering & project delivery</span></div>
+          <div class="metric"><strong>300+ sites</strong><span>Telecom tower/site audits led across Malaysia, Myanmar & Bangladesh</span></div>
+          <div class="metric"><strong>100-site</strong><span>Bangladesh asset reconciliation program delivered through two engineering teams</span></div>
+          <div class="metric"><strong>6 countries</strong><span>Australia, Malaysia, Bangladesh, Myanmar, India & Indonesia</span></div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div><h2>Professional Profile</h2></div>
+          <p>A practical engineer who combines field knowledge, planning tools, data analysis and stakeholder coordination to turn network requirements into deployable solutions.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>What I bring</h3>
+            <p>Hands-on and planning experience spanning RF coverage, drive testing, infrastructure audits, fibre routes, network documentation, IoT integration, operational dashboards, supplier coordination, technical reporting and management-level presentation of findings.</p>
+          </div>
+          <div class="card">
+            <h3>How I work</h3>
+            <p>Comfortable working between field teams, engineers, technicians, vendors, finance teams and senior management. I focus on safe delivery, clear records, practical design decisions, measurable outcomes and documentation that others can use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div><h2>Professional Experience</h2></div>
+          <p>Telecommunications engineering, infrastructure planning, IoT systems, operations and regional project delivery.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="job">
+            <div>
+              <div class="date">Jun 2025 – Jun 2026</div>
+              <div class="place">Boorowa, NSW, Australia</div>
+            </div>
+            <div>
+              <h3>Telecommunications Network Engineer / Operations Manager</h3>
+              <h4>Hilltops Free Range Pty Ltd</h4>
+              <ul>
+                <li>Delivered telecommunications, fibre and connected-infrastructure planning across a 1,000-acre operating site.</li>
+                <li>Designed the SmartFarmNet architecture integrating LoRaWAN, 5G, RFID, MQTT, REST APIs, cloud dashboards, alerts and mobile workflows.</li>
+                <li>Developed an Australian RF Planner concept using ACMA tower data, candidate-site parameters, propagation modelling and map-based visualisation to compare RSRP/SINR coverage.</li>
+                <li>Combined RF planning with drive-test logs along the Yass–Cowra corridor to identify coverage gaps and support tower/micro-cell site selection.</li>
+                <li>Prepared preliminary fibre/backhaul routes, Bills of Materials and splice-point schedules, and assessed antenna height, coverage overlap, solar capacity and battery requirements for off-grid locations.</li>
+                <li>Built operational dashboards and forecasting for feed, water, production, maintenance and labour; digitised SOPs, records, training registers and QR-code access.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div>
+              <div class="date">Apr 2018 – May 2025</div>
+              <div class="place">Malaysia + regional assignments</div>
+            </div>
+            <div>
+              <h3>Telecommunications / IoT Engineer • Technology Project Lead</h3>
+              <h4>Telsoft Consulting Malaysia Sdn Bhd</h4>
+              <ul>
+                <li>Worked across Malaysia, Bangladesh, Myanmar, India and Indonesia on telecommunications infrastructure, audit, revenue-assurance and planning assignments.</li>
+                <li>Led and performed 300+ telecom site audits for Edotco, supporting asset reconciliation, revenue assurance and technical verification.</li>
+                <li>Delivered a 100-site Bangladesh reconciliation program through two engineering teams, managing schedule, field coordination, data quality and reporting.</li>
+                <li>Supported Bharti Infratel revenue-assurance/site-audit work in Haryana, India.</li>
+                <li>Planned and designed the Telsoft Site Audit Application used to structure and upload audit data across Malaysia, Bangladesh and Myanmar.</li>
+                <li>Developed demand-linked services costing and profitability models for Telin Indonesia and presented findings to senior finance and country-level stakeholders.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div>
+              <div class="date">2017</div>
+              <div class="place">Sri Lanka</div>
+            </div>
+            <div>
+              <h3>Trainee Technical Officer – Access Network Planning</h3>
+              <h4>Dialog Axiata PLC</h4>
+              <ul>
+                <li>Completed six months of training in access-network planning and telecommunications operations, building a foundation in mobile network infrastructure and field engineering.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div><h2>Featured Projects</h2></div>
+          <p>Selected work that demonstrates network planning, practical engineering, digitalisation and delivery across field and management environments.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card project">
+            <span class="tag">RF / GIS</span>
+            <h3>Australian RF Planner</h3>
+            <p>Map-based planning concept combining ACMA tower data, candidate sites and propagation parameters to compare predicted RSRP/SINR, identify weak-coverage areas and support site-selection decisions.</p>
+          </div>
+          <div class="card project">
+            <span class="tag">IoT / Connectivity</span>
+            <h3>SmartFarmNet</h3>
+            <p>Connected-field architecture integrating LoRaWAN, 5G, RFID, MQTT, REST APIs, dashboards and mobile workflows for operations, monitoring, alerts and data-driven decision-making.</p>
+          </div>
+          <div class="card project">
+            <span class="tag">Telecom Infrastructure</span>
+            <h3>Edotco Site Audit Program</h3>
+            <p>Engineering audits across hundreds of tower sites to validate assets, reconcile records and provide structured field data for revenue assurance and operational decision-making.</p>
+          </div>
+          <div class="card project">
+            <span class="tag">Project Delivery</span>
+            <h3>Bangladesh 100-Site Reconciliation</h3>
+            <p>Coordinated two engineering teams to complete a 100-site program with focus on scheduling, data accuracy, quality control and completion reporting.</p>
+          </div>
+          <div class="card project">
+            <span class="tag">Fibre / Backhaul</span>
+            <h3>Fibre Route & Backhaul Planning</h3>
+            <p>Prepared preliminary fibre routes toward NBN points of interconnect, Bills of Materials, splice schedules and backhaul concepts for connected infrastructure.</p>
+          </div>
+          <div class="card project">
+            <span class="tag">Digital Tools</span>
+            <h3>Site Audit Application</h3>
+            <p>Planned and designed a field-data workflow/application for Telsoft site-audit teams, improving consistency of evidence capture and upload across multiple countries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div><h2>Technical Skills</h2></div>
+          <p>Tools and capabilities relevant to telecommunications planning, field engineering, fibre, connected systems, project delivery and commercial analysis.</p>
+        </div>
+        <div class="skills-wrap">
+          <div class="card skill-card">
+            <h3>Network Planning & RF</h3>
+            <div class="skill-list">
+              <span>2G / 3G / 4G / 5G</span><span>TEMS</span><span>NEMO</span><span>Planet</span><span>iBwave</span><span>LINKPlanner</span><span>QGIS</span><span>Google Earth Pro</span><span>CloudRF</span><span>U2000</span><span>Wi-Fi Analyzer</span><span>KML / GIS</span><span>RSRP / SINR analysis</span><span>Drive testing</span>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <h3>Fibre, Backhaul & Field Engineering</h3>
+            <div class="skill-list">
+              <span>Fibre route planning</span><span>Splice schedules</span><span>BoM preparation</span><span>Site surveys</span><span>Tower audits</span><span>Backhaul concepts</span><span>Coverage gap analysis</span><span>Site selection</span><span>Field QA</span>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <h3>IoT & Connected Systems</h3>
+            <div class="skill-list">
+              <span>LoRaWAN</span><span>RFID</span><span>MQTT</span><span>REST APIs</span><span>Cloud dashboards</span><span>Alert logic</span><span>Mobile workflows</span><span>Uptime monitoring</span><span>Smart infrastructure</span>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <h3>Analytics, Project & Commercial</h3>
+            <div class="skill-list">
+              <span>Excel</span><span>PowerPoint</span><span>Forecasting</span><span>Dashboards</span><span>CAPEX / OPEX</span><span>NPV / IRR</span><span>Jira</span><span>ClickUp</span><span>draw.io</span><span>Chart.js</span><span>Apps Script</span><span>Technical reporting</span><span>Vendor coordination</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head">
+          <div><h2>Education & Credentials</h2></div>
+          <p>Engineering, management and professional development supporting both technical and delivery responsibilities.</p>
+        </div>
+        <div class="edu-row">
+          <div class="card edu-card">
+            <small>ENGINEERING</small>
+            <h3>BEng (Hons) – Electronics & Communications</h3>
+            <p>Degree focused on electronics, communications and telecommunications engineering.</p>
+          </div>
+          <div class="card edu-card">
+            <small>ENGINEERING</small>
+            <h3>IESL Engineering Graduate Diploma</h3>
+            <p>A-grade graduate diploma covering electronics, telecommunications and computer engineering.</p>
+          </div>
+          <div class="card edu-card">
+            <small>MANAGEMENT</small>
+            <h3>Master of Business Administration (MBA)</h3>
+            <p>Supports commercial analysis, stakeholder management, operations and project leadership.</p>
+          </div>
+          <div class="card edu-card">
+            <small>PROFESSIONAL</small>
+            <h3>Memberships & Training</h3>
+            <p>Engineers Australia member; IESL Associate Engineer. Hands-on fibre optic splicing training and prior CommScope Fibre Optic Specialist certification.</p>
+          </div>
+        </div>
+        <div class="card" style="margin-top:18px">
+          <h3>English & Communication</h3>
+          <p>IELTS General Training overall 7.0 (Listening 7.5, Reading 7.5, Writing 6.0, Speaking 6.5). Trinity College London Spoken English distinctions across multiple grades. Experienced presenting engineering and commercial findings to country managers, CFO-level stakeholders and cross-functional teams.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work-rights">
+      <div class="container">
+        <div class="section-head">
+          <div><h2>Australia Work Rights & Availability</h2></div>
+          <p>Clear recruiter-facing information for employers considering transfer, nomination or sponsorship.</p>
+        </div>
+        <div class="card visa">
+          <div class="visa-grid">
+            <div>
+              <div class="point">
+                <strong>Visa</strong>
+                <span>Subclass 482 (Skills in Demand / Core Skills stream) valid until 4 November 2027.</span>
+              </div>
+              <div class="point">
+                <strong>Occupation</strong>
+                <span>Telecommunications Network Engineer – ANZSCO 263312.</span>
+              </div>
+              <div class="point">
+                <strong>Employer change</strong>
+                <span>Available for a suitable new-employer nomination / sponsorship arrangement.</span>
+              </div>
+            </div>
+            <div>
+              <div class="point">
+                <strong>Availability</strong>
+                <span>Available to return to Australia for the right role and can relocate Australia-wide.</span>
+              </div>
+              <div class="point">
+                <strong>Driving</strong>
+                <span>NSW unrestricted driver licence.</span>
+              </div>
+              <div class="point">
+                <strong>Roles considered</strong>
+                <span>Network planning, field engineering, fibre, site survey, telecom project/site engineering, IoT/connected infrastructure and related technical roles.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="regional">
+      <div class="container">
+        <div class="section-head">
+          <div><h2>Regional Experience</h2></div>
+          <p>Worked across multi-country engineering environments with field teams, telecom infrastructure owners, service providers and senior stakeholders.</p>
+        </div>
+        <div class="regions">
+          <span class="region">Australia</span>
+          <span class="region">Malaysia</span>
+          <span class="region">Bangladesh</span>
+          <span class="region">Myanmar</span>
+          <span class="region">India</span>
+          <span class="region">Indonesia</span>
+          <span class="region">Sri Lanka</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact">
+          <h2>Open to telecommunications opportunities</h2>
+          <p>I am interested in telecommunications network engineering, RF planning, field/site engineering, fibre, infrastructure, IoT and project-delivery roles. I am also open to positions at different levels where my field and regional experience can add value.</p>
+          <div class="hero-actions" style="justify-content:center">
+            <a class="btn primary" href="mailto:ADD_YOUR_EMAIL_HERE">Email Mario</a>
+            <a class="btn secondary" href="Mario_De_Silva_CV.pdf">Download CV</a>
+            <a class="btn secondary" href="ADD_YOUR_LINKEDIN_URL_HERE" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+          <div class="small-note">Before publishing: replace the email and LinkedIn placeholders, and place your PDF CV beside this file using the name <strong>Mario_De_Silva_CV.pdf</strong>.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Mario Shyomal De Silva • Telecommunications Network Engineer • Recruiter Portfolio
+    </div>
+  </footer>
+</body>
+</html>
