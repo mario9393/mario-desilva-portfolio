@@ -205,7 +205,14 @@
     .field-slide img{
       width:100%;height:100%;display:block;object-fit:cover;object-position:center;
     }
-    .field-slide.portrait img{object-position:center 32%}
+    .field-slide.portrait{
+      background:#081522;
+    }
+    .field-slide.portrait img{
+      object-fit:contain;
+      object-position:center;
+      background:#081522;
+    }
     .field-overlay{
       position:absolute;inset:0;
       background:linear-gradient(180deg,rgba(2,10,18,.06) 0%,rgba(2,10,18,.08) 45%,rgba(2,10,18,.74) 100%);
