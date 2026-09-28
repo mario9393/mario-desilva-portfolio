@@ -186,31 +186,12 @@
       margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.08);
       color:#a9bbcf;font-size:12px;
     }
-    .visa{
-      background:
-        linear-gradient(135deg,rgba(88,199,255,.09),rgba(118,230,192,.08)),
-        #0c1b2d;
-      border:1px solid rgba(88,199,255,.25)
-    }
-    .visa-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .visa .point{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-    .visa .point:last-child{border-bottom:none}
-    .visa .point strong{display:block}
-    .visa .point span{color:var(--muted);font-size:13px}
     .regions{display:flex;gap:10px;flex-wrap:wrap}
     .region{padding:9px 12px;border-radius:12px;border:1px solid var(--line);color:#c8d6e4;background:#0b1a2b;font-size:13px}
-    .contact{
-      text-align:center;padding:42px;
-      background:linear-gradient(145deg,#0e2137,#102b3e);
-      border:1px solid rgba(255,255,255,.08);border-radius:28px
-    }
-    .contact h2{font-size:34px;margin:0 0 12px}
-    .contact p{color:var(--muted);max-width:700px;margin:0 auto 22px}
     footer{padding:32px 0 46px;color:#7f95aa;font-size:13px;text-align:center}
-    .small-note{font-size:12px;color:#72889c;margin-top:10px}
     .hide-print{}
     @media (max-width:900px){
-      .hero-grid,.grid-2,.grid-3,.skills-wrap,.edu-row,.visa-grid,.credential-grid{grid-template-columns:1fr}
+      .hero-grid,.grid-2,.grid-3,.skills-wrap,.edu-row,.credential-grid{grid-template-columns:1fr}
       .institution-logo{max-width:100%;min-width:105px}
       .job-brand{align-items:flex-start}
       .hero{padding-top:66px}
@@ -223,8 +204,8 @@
     @media print{
       .nav-wrap,.hero-actions,.hide-print{display:none!important}
       body{background:#fff;color:#111}
-      .card,.job,.hero-card,.contact,.visa{background:#fff;color:#111;box-shadow:none;border:1px solid #ccc}
-      .lead,.sublead,.card p,.job ul,.job h4,.metric span,.section-head p,.contact p,.visa .point span,.place{color:#333!important}
+      .card,.job,.hero-card{background:#fff;color:#111;box-shadow:none;border:1px solid #ccc}
+      .lead,.sublead,.card p,.job ul,.job h4,.metric span,.section-head p,.place{color:#333!important}
       .pill,.skill-list span,.region{color:#111;background:#fff;border-color:#bbb}
       .gradient{color:#111;background:none;-webkit-text-fill-color:#111}
       a{color:#111}
@@ -244,8 +225,6 @@
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
           <a href="#education">Education</a>
-          <a href="#work-rights">Work Rights</a>
-          <a href="#contact">Contact</a>
         </div>
       </nav>
     </div>
@@ -261,7 +240,6 @@
           <p class="sublead">Experienced in 2G/3G/4G/5G network planning, field engineering, coverage analysis, tower/site audits, fibre and backhaul planning, smart connected infrastructure, data analytics, technical coordination and end-to-end project delivery.</p>
           <div class="hero-actions hide-print">
             <a class="btn primary" href="#experience">View Experience</a>
-            <a class="btn secondary" href="#work-rights">Visa & Availability</a>
             <button class="btn secondary" onclick="window.print()">Print / Save PDF</button>
           </div>
           <div class="pills">
@@ -593,47 +571,6 @@
       </div>
     </section>
 
-    <section id="work-rights">
-      <div class="container">
-        <div class="section-head">
-          <div><h2>Australia Work Rights & Availability</h2></div>
-          <p>Clear recruiter-facing information for employers considering transfer, nomination or sponsorship.</p>
-        </div>
-        <div class="card visa">
-          <div class="visa-grid">
-            <div>
-              <div class="point">
-                <strong>Visa</strong>
-                <span>Subclass 482 (Skills in Demand / Core Skills stream) valid until 4 November 2027.</span>
-              </div>
-              <div class="point">
-                <strong>Occupation</strong>
-                <span>Telecommunications Network Engineer – ANZSCO 263312.</span>
-              </div>
-              <div class="point">
-                <strong>Employer change</strong>
-                <span>Available for a suitable new-employer nomination / sponsorship arrangement.</span>
-              </div>
-            </div>
-            <div>
-              <div class="point">
-                <strong>Availability</strong>
-                <span>Available to return to Australia for the right role and can relocate Australia-wide.</span>
-              </div>
-              <div class="point">
-                <strong>Driving</strong>
-                <span>NSW unrestricted driver licence.</span>
-              </div>
-              <div class="point">
-                <strong>Roles considered</strong>
-                <span>Network planning, field engineering, fibre, site survey, telecom project/site engineering, IoT/connected infrastructure and related technical roles.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="regional">
       <div class="container">
         <div class="section-head">
@@ -648,21 +585,6 @@
           <span class="region">India</span>
           <span class="region">Indonesia</span>
           <span class="region">Sri Lanka</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="contact">
-          <h2>Open to telecommunications opportunities</h2>
-          <p>I am interested in telecommunications network engineering, RF planning, field/site engineering, fibre, infrastructure, IoT and project-delivery roles. I am also open to positions at different levels where my field and regional experience can add value.</p>
-          <div class="hero-actions" style="justify-content:center">
-            <a class="btn primary" href="mailto:ADD_YOUR_EMAIL_HERE">Email Mario</a>
-            <a class="btn secondary" href="Mario_De_Silva_CV.pdf">Download CV</a>
-            <a class="btn secondary" href="ADD_YOUR_LINKEDIN_URL_HERE" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
-          <div class="small-note">Before publishing: replace the email and LinkedIn placeholders, place your PDF CV beside this file as <strong>Mario_De_Silva_CV.pdf</strong>, The organisation logos are embedded directly into this HTML file, so no separate logo folder is required.</div>
         </div>
       </div>
     </section>
