@@ -257,6 +257,74 @@
     @media (prefers-reduced-motion:reduce){
       .field-slide.active{animation:none}
     }
+
+    .telecom-hero-zone{
+      position:relative;isolation:isolate;overflow:hidden;
+      border-bottom:1px solid rgba(88,199,255,.10);
+    }
+    .telecom-hero-zone::before{
+      content:"";position:absolute;inset:0;z-index:-3;
+      background:
+        linear-gradient(180deg,rgba(4,13,24,.58),rgba(4,13,24,.92) 72%,#07111f 100%),
+        url("4.JPG") center 28%/cover no-repeat;
+      filter:saturate(.85);
+      transform:scale(1.02);
+    }
+    .telecom-hero-zone::after{
+      content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
+      background:
+        radial-gradient(circle at 15% 34%,rgba(88,199,255,.8) 0 2px,transparent 3px),
+        radial-gradient(circle at 34% 20%,rgba(118,230,192,.65) 0 2px,transparent 3px),
+        radial-gradient(circle at 58% 32%,rgba(88,199,255,.75) 0 2px,transparent 3px),
+        radial-gradient(circle at 78% 18%,rgba(118,230,192,.58) 0 2px,transparent 3px),
+        radial-gradient(circle at 90% 38%,rgba(88,199,255,.8) 0 2px,transparent 3px),
+        linear-gradient(115deg,transparent 0 14%,rgba(88,199,255,.10) 14.2% 14.35%,transparent 14.55% 100%),
+        linear-gradient(30deg,transparent 0 32%,rgba(118,230,192,.09) 32.2% 32.35%,transparent 32.55% 100%),
+        linear-gradient(155deg,transparent 0 61%,rgba(88,199,255,.08) 61.2% 61.35%,transparent 61.55% 100%);
+      opacity:.75;
+    }
+    .telecom-hero-zone .field-slider-shell{
+      box-shadow:0 24px 70px rgba(0,0,0,.42),0 0 0 1px rgba(88,199,255,.05);
+      background:rgba(6,17,30,.88);
+      backdrop-filter:blur(6px);
+    }
+    .telecom-hero-zone .hero{
+      padding:52px 0 64px;
+    }
+    .telecom-hero-zone .hero-grid{
+      background:linear-gradient(135deg,rgba(7,17,31,.72),rgba(10,27,46,.58));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:28px;padding:30px;
+      box-shadow:0 20px 55px rgba(0,0,0,.28);
+      backdrop-filter:blur(14px);
+    }
+    .sound-toggle{
+      display:inline-flex;align-items:center;gap:9px;
+      border:1px solid rgba(88,199,255,.22);
+      background:rgba(255,255,255,.04);color:#dcecff;
+      border-radius:999px;padding:8px 12px;cursor:pointer;
+      font:inherit;font-size:13px;font-weight:700;
+      transition:.2s ease;
+    }
+    .sound-toggle:hover{background:rgba(88,199,255,.09);border-color:rgba(88,199,255,.42)}
+    .sound-toggle .speaker{font-size:15px;line-height:1}
+    .sound-toggle .switch{
+      width:34px;height:19px;border-radius:999px;background:#40556b;
+      position:relative;display:inline-block;transition:.25s ease;
+    }
+    .sound-toggle .switch::after{
+      content:"";position:absolute;width:13px;height:13px;border-radius:50%;
+      background:#fff;left:3px;top:3px;transition:.25s ease;
+    }
+    .sound-toggle.active .switch{background:linear-gradient(90deg,var(--accent),var(--accent2))}
+    .sound-toggle.active .switch::after{transform:translateX(15px)}
+    .nav-right{display:flex;align-items:center;gap:16px}
+    @media (max-width:900px){
+      .nav-right{gap:8px}
+      .sound-toggle .sound-label{display:none}
+      .sound-toggle{padding:8px 9px}
+      .telecom-hero-zone .hero-grid{padding:22px}
+    }
     .hide-print{}
     @media (max-width:900px){
       .hero-grid,.grid-2,.grid-3,.skills-wrap,.edu-row,.credential-grid{grid-template-columns:1fr}
@@ -287,12 +355,19 @@
     <div class="container">
       <nav>
         <a class="brand" href="#top"><span class="avatar">MS</span><span>Mario Shyomal De Silva</span></a>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#education">Education</a>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+          </div>
+          <button class="sound-toggle" id="ambientSoundToggle" type="button" aria-pressed="false" title="Ambient telecom sound">
+            <span class="speaker" aria-hidden="true">🔇</span>
+            <span class="sound-label">Ambient Sound</span>
+            <span class="switch" aria-hidden="true"></span>
+          </button>
         </div>
       </nav>
     </div>
@@ -300,6 +375,7 @@
 
   <main id="top">
 
+    <div class="telecom-hero-zone">
     <section class="field-slider hide-print" aria-label="Telecommunications field experience photo gallery">
       <div class="container">
         <div class="field-slider-shell" id="fieldSlider">
@@ -370,6 +446,7 @@
         </aside>
       </div>
     </header>
+    </div>
 
     <section id="about">
       <div class="container">
@@ -795,6 +872,85 @@
       slider.addEventListener('focusin', stop);
       slider.addEventListener('focusout', start);
       start();
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const toggle = document.getElementById('ambientSoundToggle');
+      if (!toggle) return;
+
+      let ctx, master, humA, humB, lfo, lfoGain, pingTimer;
+      let isOn = false;
+
+      function createAmbient() {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        ctx = new AC();
+        master = ctx.createGain();
+        master.gain.value = 0.035;
+        master.connect(ctx.destination);
+
+        humA = ctx.createOscillator();
+        humA.type = 'sine';
+        humA.frequency.value = 82;
+
+        humB = ctx.createOscillator();
+        humB.type = 'triangle';
+        humB.frequency.value = 123;
+
+        const humGain = ctx.createGain();
+        humGain.gain.value = 0.22;
+        humA.connect(humGain);
+        humB.connect(humGain);
+        humGain.connect(master);
+
+        lfo = ctx.createOscillator();
+        lfo.type = 'sine';
+        lfo.frequency.value = 0.08;
+        lfoGain = ctx.createGain();
+        lfoGain.gain.value = 0.015;
+        lfo.connect(lfoGain);
+        lfoGain.connect(master.gain);
+
+        humA.start();
+        humB.start();
+        lfo.start();
+
+        pingTimer = setInterval(() => {
+          if (!ctx || ctx.state !== 'running') return;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(620, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(980, ctx.currentTime + 0.55);
+          gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.06, ctx.currentTime + 0.04);
+          gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.7);
+          osc.connect(gain); gain.connect(master);
+          osc.start(); osc.stop(ctx.currentTime + 0.75);
+        }, 6500);
+      }
+
+      async function turnOn() {
+        if (!ctx) createAmbient();
+        if (ctx.state === 'suspended') await ctx.resume();
+        master.gain.setTargetAtTime(0.035, ctx.currentTime, 0.12);
+        isOn = true;
+        toggle.classList.add('active');
+        toggle.setAttribute('aria-pressed','true');
+        toggle.querySelector('.speaker').textContent = '🔊';
+      }
+
+      function turnOff() {
+        if (ctx && master) master.gain.setTargetAtTime(0.0001, ctx.currentTime, 0.1);
+        isOn = false;
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-pressed','false');
+        toggle.querySelector('.speaker').textContent = '🔇';
+      }
+
+      toggle.addEventListener('click', () => isOn ? turnOff() : turnOn());
+      window.addEventListener('pagehide', () => { if (pingTimer) clearInterval(pingTimer); });
     })();
   </script>
 </body>
