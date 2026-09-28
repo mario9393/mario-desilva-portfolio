@@ -265,23 +265,28 @@
     .telecom-hero-zone::before{
       content:"";position:absolute;inset:0;z-index:-3;
       background:
-        linear-gradient(180deg,rgba(4,13,24,.58),rgba(4,13,24,.92) 72%,#07111f 100%),
-        url("4.JPG") center 28%/cover no-repeat;
-      filter:saturate(.85);
+        linear-gradient(180deg,rgba(4,13,24,.68),rgba(4,13,24,.94) 72%,#07111f 100%),
+        radial-gradient(circle at 18% 22%,rgba(88,199,255,.18),transparent 24%),
+        radial-gradient(circle at 80% 20%,rgba(118,230,192,.13),transparent 22%),
+        radial-gradient(circle at 52% 72%,rgba(88,199,255,.08),transparent 30%),
+        linear-gradient(135deg,#07111f 0%,#0a1930 38%,#0a223d 68%,#07111f 100%);
       transform:scale(1.02);
     }
     .telecom-hero-zone::after{
       content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
       background:
-        radial-gradient(circle at 15% 34%,rgba(88,199,255,.8) 0 2px,transparent 3px),
-        radial-gradient(circle at 34% 20%,rgba(118,230,192,.65) 0 2px,transparent 3px),
-        radial-gradient(circle at 58% 32%,rgba(88,199,255,.75) 0 2px,transparent 3px),
-        radial-gradient(circle at 78% 18%,rgba(118,230,192,.58) 0 2px,transparent 3px),
-        radial-gradient(circle at 90% 38%,rgba(88,199,255,.8) 0 2px,transparent 3px),
-        linear-gradient(115deg,transparent 0 14%,rgba(88,199,255,.10) 14.2% 14.35%,transparent 14.55% 100%),
-        linear-gradient(30deg,transparent 0 32%,rgba(118,230,192,.09) 32.2% 32.35%,transparent 32.55% 100%),
-        linear-gradient(155deg,transparent 0 61%,rgba(88,199,255,.08) 61.2% 61.35%,transparent 61.55% 100%);
-      opacity:.75;
+        radial-gradient(circle at 10% 28%,rgba(88,199,255,.95) 0 2px,transparent 3px),
+        radial-gradient(circle at 22% 52%,rgba(118,230,192,.72) 0 2px,transparent 3px),
+        radial-gradient(circle at 38% 20%,rgba(88,199,255,.88) 0 2px,transparent 3px),
+        radial-gradient(circle at 56% 44%,rgba(118,230,192,.68) 0 2px,transparent 3px),
+        radial-gradient(circle at 72% 18%,rgba(88,199,255,.88) 0 2px,transparent 3px),
+        radial-gradient(circle at 84% 48%,rgba(118,230,192,.68) 0 2px,transparent 3px),
+        radial-gradient(circle at 93% 27%,rgba(88,199,255,.9) 0 2px,transparent 3px),
+        linear-gradient(117deg,transparent 0 12%,rgba(88,199,255,.08) 12.15% 12.35%,transparent 12.5% 100%),
+        linear-gradient(33deg,transparent 0 30%,rgba(118,230,192,.08) 30.15% 30.35%,transparent 30.5% 100%),
+        linear-gradient(147deg,transparent 0 52%,rgba(88,199,255,.07) 52.15% 52.35%,transparent 52.5% 100%),
+        linear-gradient(76deg,transparent 0 70%,rgba(118,230,192,.05) 70.15% 70.35%,transparent 70.5% 100%);
+      opacity:.9;
     }
     .telecom-hero-zone .field-slider-shell{
       box-shadow:0 24px 70px rgba(0,0,0,.42),0 0 0 1px rgba(88,199,255,.05);
@@ -298,31 +303,7 @@
       box-shadow:0 20px 55px rgba(0,0,0,.28);
       backdrop-filter:blur(14px);
     }
-    .sound-toggle{
-      display:inline-flex;align-items:center;gap:9px;
-      border:1px solid rgba(88,199,255,.22);
-      background:rgba(255,255,255,.04);color:#dcecff;
-      border-radius:999px;padding:8px 12px;cursor:pointer;
-      font:inherit;font-size:13px;font-weight:700;
-      transition:.2s ease;
-    }
-    .sound-toggle:hover{background:rgba(88,199,255,.09);border-color:rgba(88,199,255,.42)}
-    .sound-toggle .speaker{font-size:15px;line-height:1}
-    .sound-toggle .switch{
-      width:34px;height:19px;border-radius:999px;background:#40556b;
-      position:relative;display:inline-block;transition:.25s ease;
-    }
-    .sound-toggle .switch::after{
-      content:"";position:absolute;width:13px;height:13px;border-radius:50%;
-      background:#fff;left:3px;top:3px;transition:.25s ease;
-    }
-    .sound-toggle.active .switch{background:linear-gradient(90deg,var(--accent),var(--accent2))}
-    .sound-toggle.active .switch::after{transform:translateX(15px)}
-    .nav-right{display:flex;align-items:center;gap:16px}
     @media (max-width:900px){
-      .nav-right{gap:8px}
-      .sound-toggle .sound-label{display:none}
-      .sound-toggle{padding:8px 9px}
       .telecom-hero-zone .hero-grid{padding:22px}
     }
     .hide-print{}
@@ -355,19 +336,12 @@
     <div class="container">
       <nav>
         <a class="brand" href="#top"><span class="avatar">MS</span><span>Mario Shyomal De Silva</span></a>
-        <div class="nav-right">
-          <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-          </div>
-          <button class="sound-toggle" id="ambientSoundToggle" type="button" aria-pressed="false" title="Ambient telecom sound">
-            <span class="speaker" aria-hidden="true">🔇</span>
-            <span class="sound-label">Ambient Sound</span>
-            <span class="switch" aria-hidden="true"></span>
-          </button>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
         </div>
       </nav>
     </div>
@@ -875,83 +849,5 @@
     })();
   </script>
 
-  <script>
-    (() => {
-      const toggle = document.getElementById('ambientSoundToggle');
-      if (!toggle) return;
-
-      let ctx, master, humA, humB, lfo, lfoGain, pingTimer;
-      let isOn = false;
-
-      function createAmbient() {
-        const AC = window.AudioContext || window.webkitAudioContext;
-        ctx = new AC();
-        master = ctx.createGain();
-        master.gain.value = 0.035;
-        master.connect(ctx.destination);
-
-        humA = ctx.createOscillator();
-        humA.type = 'sine';
-        humA.frequency.value = 82;
-
-        humB = ctx.createOscillator();
-        humB.type = 'triangle';
-        humB.frequency.value = 123;
-
-        const humGain = ctx.createGain();
-        humGain.gain.value = 0.22;
-        humA.connect(humGain);
-        humB.connect(humGain);
-        humGain.connect(master);
-
-        lfo = ctx.createOscillator();
-        lfo.type = 'sine';
-        lfo.frequency.value = 0.08;
-        lfoGain = ctx.createGain();
-        lfoGain.gain.value = 0.015;
-        lfo.connect(lfoGain);
-        lfoGain.connect(master.gain);
-
-        humA.start();
-        humB.start();
-        lfo.start();
-
-        pingTimer = setInterval(() => {
-          if (!ctx || ctx.state !== 'running') return;
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(620, ctx.currentTime);
-          osc.frequency.exponentialRampToValueAtTime(980, ctx.currentTime + 0.55);
-          gain.gain.setValueAtTime(0.0001, ctx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.06, ctx.currentTime + 0.04);
-          gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.7);
-          osc.connect(gain); gain.connect(master);
-          osc.start(); osc.stop(ctx.currentTime + 0.75);
-        }, 6500);
-      }
-
-      async function turnOn() {
-        if (!ctx) createAmbient();
-        if (ctx.state === 'suspended') await ctx.resume();
-        master.gain.setTargetAtTime(0.035, ctx.currentTime, 0.12);
-        isOn = true;
-        toggle.classList.add('active');
-        toggle.setAttribute('aria-pressed','true');
-        toggle.querySelector('.speaker').textContent = '🔊';
-      }
-
-      function turnOff() {
-        if (ctx && master) master.gain.setTargetAtTime(0.0001, ctx.currentTime, 0.1);
-        isOn = false;
-        toggle.classList.remove('active');
-        toggle.setAttribute('aria-pressed','false');
-        toggle.querySelector('.speaker').textContent = '🔇';
-      }
-
-      toggle.addEventListener('click', () => isOn ? turnOff() : turnOn());
-      window.addEventListener('pagehide', () => { if (pingTimer) clearInterval(pingTimer); });
-    })();
-  </script>
 </body>
 </html>
