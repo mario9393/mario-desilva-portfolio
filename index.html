@@ -156,16 +156,51 @@
     .credential-card .credential-meta{font-size:11px;color:#7f95aa;margin-top:10px}
     .project h3{font-size:18px}
     .project .tag{display:inline-block;font-size:11px;font-weight:800;color:#bfefff;background:rgba(88,199,255,.08);border:1px solid rgba(88,199,255,.22);padding:4px 8px;border-radius:999px;margin-bottom:12px}
-    .infrastructure-showcase{margin-top:26px}
-    .infrastructure-panel{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center}
-    .concept-graphic-wrap{background:linear-gradient(180deg,rgba(10,24,41,.96),rgba(7,17,31,.98));border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:16px;box-shadow:0 16px 40px rgba(0,0,0,.22)}
-    .concept-graphic{width:100%;height:auto;display:block;border-radius:18px}
-    .concept-side h3{margin:0 0 10px;font-size:24px;letter-spacing:-.4px}
-    .concept-side p{color:#c6d3e1;margin:0 0 16px}
-    .concept-points{display:grid;gap:10px}
-    .concept-point{padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);color:#d4e1ee;font-size:14px;line-height:1.5}
-    .concept-point strong{color:#fff}
-    @media (max-width:900px){.infrastructure-panel{grid-template-columns:1fr}}
+    .project-visual{
+      margin:14px 0 16px;
+      padding:10px 12px;
+      border-radius:16px;
+      background:linear-gradient(180deg,rgba(7,22,38,.96),rgba(6,17,31,.98));
+      border:1px solid rgba(255,255,255,.065);
+      min-height:126px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .project-visual svg{width:100%;height:118px;display:block;overflow:visible}
+    .project-visual .line{stroke:#58c7ff;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .project-visual .green{stroke:#76e6c0}
+    .project-visual .muted{stroke:#6d8ba7}
+    .project-visual .fill-blue{fill:#58c7ff}
+    .project-visual .fill-green{fill:#76e6c0}
+    .project-visual .panel-fill{fill:#102943;stroke:#285071;stroke-width:1.5}
+    .project-visual .soft-fill{fill:#0d302f;stroke:#24514e;stroke-width:1.5}
+    .project-visual text{font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+    .project-visual .label{fill:#dbeafa;font-size:10px;font-weight:700}
+    .signal-ring{transform-box:fill-box;transform-origin:center;animation:signalPulse 2.3s ease-out infinite}
+    .signal-ring.delay{animation-delay:.75s}
+    .signal-ring.delay2{animation-delay:1.5s}
+    .wind-rotate{transform-box:fill-box;transform-origin:center;animation:spinWind 4.5s linear infinite}
+    .flow-dot{animation:flowDot 2s linear infinite}
+    .flow-dot.delay{animation-delay:.7s}
+    .flow-dot.delay2{animation-delay:1.35s}
+    .data-pulse{animation:dataPulse 1.8s ease-in-out infinite}
+    .data-pulse.delay{animation-delay:.6s}
+    .data-pulse.delay2{animation-delay:1.2s}
+    .scan-beam{animation:scanBeam 2.4s ease-in-out infinite}
+    .check-pop{transform-box:fill-box;transform-origin:center;animation:checkPop 2s ease-in-out infinite}
+    .route-dash{stroke-dasharray:8 7;animation:dashMove 2.8s linear infinite}
+    @keyframes signalPulse{0%{opacity:.15;transform:scale(.65)}65%{opacity:.95}100%{opacity:0;transform:scale(1.35)}}
+    @keyframes spinWind{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    @keyframes flowDot{0%{opacity:0;transform:translateX(-12px)}20%{opacity:1}80%{opacity:1}100%{opacity:0;transform:translateX(24px)}}
+    @keyframes dataPulse{0%,100%{opacity:.28}50%{opacity:1}}
+    @keyframes scanBeam{0%,100%{opacity:.15;transform:translateX(-8px)}50%{opacity:.85;transform:translateX(10px)}}
+    @keyframes checkPop{0%,70%,100%{transform:scale(1)}82%{transform:scale(1.18)}}
+    @keyframes dashMove{to{stroke-dashoffset:-30}}
+    @media (prefers-reduced-motion:reduce){
+      .signal-ring,.wind-rotate,.flow-dot,.data-pulse,.scan-beam,.check-pop,.route-dash{animation:none!important}
+    }
     .skills-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .skill-card h3{margin:0 0 12px;font-size:17px}
     .skill-list{display:flex;gap:8px;flex-wrap:wrap}
@@ -577,121 +612,152 @@
       <div class="container">
         <div class="section-head">
           <div><h2>Selected Projects & Career Highlights</h2></div>
-          <p>Representative work spanning large-scale telecommunications delivery, RF and fibre planning, digital transformation, IoT and commercial analysis.</p>
+          <p>Representative work spanning large-scale telecommunications delivery, RF and fibre planning, digital transformation, IoT, electrical infrastructure and commercial analysis.</p>
         </div>
         <div class="grid-3">
+
           <div class="card project">
             <span class="tag">Project Delivery</span>
             <h3>300+ Site Audit & Reconciliation Programmes</h3>
+            <div class="project-visual" aria-label="Animated telecom site audit graphic">
+              <svg viewBox="0 0 320 118" role="img">
+                <line class="line muted" x1="42" y1="92" x2="58" y2="30"/>
+                <line class="line muted" x1="74" y1="92" x2="58" y2="30"/>
+                <line class="line muted" x1="49" y1="64" x2="67" y2="64"/>
+                <line class="line muted" x1="45" y1="80" x2="71" y2="80"/>
+                <circle class="signal-ring line green" cx="58" cy="30" r="10"/>
+                <circle class="signal-ring delay line green" cx="58" cy="30" r="18"/>
+                <rect class="panel-fill" x="118" y="22" width="118" height="74" rx="12"/>
+                <line class="line" x1="134" y1="43" x2="217" y2="43"/>
+                <line class="line muted" x1="134" y1="59" x2="202" y2="59"/>
+                <line class="line muted" x1="134" y1="75" x2="190" y2="75"/>
+                <circle class="fill-green check-pop" cx="258" cy="44" r="16"/>
+                <path d="M250 44l6 6 11-13" fill="none" stroke="#07111f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <text class="label" x="118" y="110">SITE → EQUIPMENT → VALIDATION</text>
+              </svg>
+            </div>
             <p>Led multi-country telecommunications audit and asset-reconciliation programmes across Malaysia, Myanmar and Bangladesh, coordinating field execution, technical validation, quality assurance, issue resolution and client deliverables.</p>
           </div>
+
           <div class="card project">
             <span class="tag">Team Leadership</span>
             <h3>Bangladesh 100-Site Programme</h3>
+            <div class="project-visual" aria-label="Animated engineering team coordination graphic">
+              <svg viewBox="0 0 320 118" role="img">
+                <circle class="soft-fill" cx="64" cy="43" r="20"/>
+                <circle class="panel-fill" cx="64" cy="83" r="20"/>
+                <circle class="soft-fill" cx="254" cy="43" r="20"/>
+                <circle class="panel-fill" cx="254" cy="83" r="20"/>
+                <circle class="fill-green" cx="64" cy="40" r="7"/><path class="line green" d="M51 56c7-11 20-11 27 0"/>
+                <circle class="fill-blue" cx="254" cy="40" r="7"/><path class="line" d="M241 56c7-11 20-11 27 0"/>
+                <rect class="panel-fill" x="123" y="34" width="74" height="50" rx="10"/>
+                <line class="line muted" x1="137" y1="49" x2="183" y2="49"/>
+                <line class="line muted" x1="137" y1="62" x2="176" y2="62"/>
+                <line class="line green route-dash" x1="86" y1="58" x2="122" y2="58"/>
+                <line class="line route-dash" x1="198" y1="58" x2="232" y2="58"/>
+                <circle class="fill-green flow-dot" cx="101" cy="58" r="4"/>
+                <circle class="fill-blue flow-dot delay" cx="214" cy="58" r="4"/>
+                <text class="label" x="111" y="108">2 TEAMS • 100 SITES • QA</text>
+              </svg>
+            </div>
             <p>Managed two engineering teams, allocated workloads, monitored schedules and progress, reviewed technical evidence and delivered against client quality requirements.</p>
           </div>
+
           <div class="card project">
             <span class="tag">Digital Transformation</span>
             <h3>Telsoft Site Audit Application</h3>
+            <div class="project-visual" aria-label="Animated mobile application and cloud data flow graphic">
+              <svg viewBox="0 0 320 118" role="img">
+                <rect class="panel-fill" x="45" y="14" width="64" height="90" rx="12"/>
+                <rect x="55" y="27" width="44" height="58" rx="5" fill="#0a1b2c" stroke="#335d7c"/>
+                <circle class="fill-green data-pulse" cx="67" cy="42" r="5"/>
+                <line class="line muted" x1="78" y1="42" x2="93" y2="42"/>
+                <circle class="fill-blue data-pulse delay" cx="67" cy="58" r="5"/>
+                <line class="line muted" x1="78" y1="58" x2="93" y2="58"/>
+                <circle class="fill-green data-pulse delay2" cx="67" cy="74" r="5"/>
+                <line class="line muted" x1="78" y1="74" x2="93" y2="74"/>
+                <path class="line route-dash" d="M112 58h52"/>
+                <circle class="fill-blue flow-dot" cx="126" cy="58" r="4"/>
+                <path class="soft-fill" d="M192 78h69c14 0 23-10 23-23s-9-22-22-23c-5-12-16-18-29-15-9-12-29-10-35 4-14 0-24 10-24 25 0 18 10 32 18 32z"/>
+                <text class="label" x="198" y="53">CLOUD</text>
+                <text class="label" x="38" y="114">FIELD APP → VALIDATION → CLOUD</text>
+              </svg>
+            </div>
             <p>Translated field and business requirements into structured data, validation rules, workflows and reporting requirements for a multi-country digital audit platform.</p>
           </div>
+
           <div class="card project">
             <span class="tag">RF / Wi-Fi / Fibre</span>
             <h3>Indonesia Model Village Network</h3>
+            <div class="project-visual" aria-label="Animated Wi-Fi village coverage graphic">
+              <svg viewBox="0 0 320 118" role="img">
+                <path class="line green route-dash" d="M28 92h258"/>
+                <rect class="panel-fill" x="38" y="66" width="46" height="29" rx="4"/><path class="line" d="M34 67l27-22 27 22"/>
+                <rect class="panel-fill" x="137" y="66" width="46" height="29" rx="4"/><path class="line" d="M133 67l27-22 27 22"/>
+                <rect class="panel-fill" x="236" y="66" width="46" height="29" rx="4"/><path class="line" d="M232 67l27-22 27 22"/>
+                <circle class="fill-green" cx="160" cy="34" r="4"/>
+                <path class="signal-ring line green" d="M145 39a20 20 0 0 1 30 0"/>
+                <path class="signal-ring delay line green" d="M135 47a34 34 0 0 1 50 0"/>
+                <path class="signal-ring delay2 line green" d="M124 55a49 49 0 0 1 72 0"/>
+                <text class="label" x="78" y="112">Wi-Fi COVERAGE + FIBRE ROUTING</text>
+              </svg>
+            </div>
             <p>Designed an outdoor Wi-Fi solution for an 86,455 m² model village, covering RF planning, network architecture, fibre/Ethernet routes, equipment selection and BoM development.</p>
           </div>
+
           <div class="card project">
             <span class="tag">Strategy / Finance</span>
             <h3>7,480-Village Rural Broadband Study</h3>
+            <div class="project-visual" aria-label="Animated satellite microwave and fibre options graphic">
+              <svg viewBox="0 0 320 118" role="img">
+                <circle class="panel-fill" cx="55" cy="37" r="19"/>
+                <path class="line" d="M45 37h20M55 27v20"/>
+                <path class="line green route-dash" d="M75 43c44 6 61 15 88 29"/>
+                <path class="line route-dash" d="M75 36c57-2 98 3 138 16"/>
+                <path class="line muted route-dash" d="M75 50c57 20 92 29 158 30"/>
+                <circle class="fill-green flow-dot" cx="116" cy="56" r="4"/>
+                <circle class="fill-blue flow-dot delay" cx="152" cy="45" r="4"/>
+                <circle class="fill-green flow-dot delay2" cx="190" cy="76" r="4"/>
+                <rect class="soft-fill" x="214" y="35" width="29" height="24" rx="3"/><path class="line green" d="M209 36l20-15 20 15"/>
+                <rect class="panel-fill" x="251" y="58" width="29" height="24" rx="3"/><path class="line" d="M246 59l20-15 20 15"/>
+                <rect class="panel-fill" x="190" y="76" width="29" height="20" rx="3"/>
+                <text class="label" x="77" y="111">SATELLITE • MW • FIBRE • NPV / IRR</text>
+              </svg>
+            </div>
             <p>Integrated GIS and infrastructure data and developed 10-year NPV/IRR models to compare satellite, microwave and fibre deployment options for unserved Indonesian villages.</p>
           </div>
+
           <div class="card project">
             <span class="tag">5G / Fibre / Power</span>
             <h3>Yass–Cowra Regional 5G, Fibre & Power Infrastructure Study</h3>
-            <p>Developed the technical feasibility study and conceptual network design for a proposed 120 km regional telecommunications corridor between Yass and Cowra, NSW, including 5G tower placement and coverage analysis, propagation and line-of-sight assessment, tower-height evaluation, fibre/FTTH and backhaul routing, telecom architecture drawings, electrical load and power calculations, data-centre sizing, battery-backup calculations, HV/LV power concepts, EV-charging infrastructure, CAPEX/OPEX modelling and investment-return analysis. Prepared the engineering calculations, technical findings, network diagrams, route drawings and presentation materials for the study.</p>
-          </div>
-        </div>
-
-        <div class="infrastructure-showcase">
-          <div class="card infrastructure-panel">
-            <div class="concept-graphic-wrap">
-              <svg class="concept-graphic" viewBox="0 0 1200 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yass-Cowra 5G, fibre and power infrastructure concept diagram">
-                <defs>
-                  <linearGradient id="infraBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0d2237"/><stop offset="100%" stop-color="#081522"/></linearGradient>
-                  <linearGradient id="infraBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#14314d"/><stop offset="100%" stop-color="#0d2237"/></linearGradient>
-                  <linearGradient id="infraGreen" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#103534"/><stop offset="100%" stop-color="#0c2629"/></linearGradient>
-                  <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#58c7ff"/></marker>
-                  <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#76e6c0"/></marker>
-                </defs>
-                <rect width="1200" height="560" rx="24" fill="url(#infraBg)"/>
-                <text x="40" y="48" fill="#edf5ff" font-size="28" font-weight="700">Yass–Cowra 5G, Fibre &amp; Power Infrastructure Concept</text>
-                <text x="40" y="78" fill="#a9bbcf" font-size="15">Integrated electrical and telecommunications concept developed for regional infrastructure planning</text>
-
-                <rect x="40" y="130" width="180" height="110" rx="18" fill="url(#infraGreen)" stroke="#244b4b"/>
-                <text x="130" y="164" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">Wind Farm</text>
-                <text x="130" y="190" text-anchor="middle" fill="#c9fff1" font-size="14">Primary Power Source</text>
-                <line x1="110" y1="220" x2="110" y2="176" stroke="#76e6c0" stroke-width="3"/><line x1="110" y1="187" x2="92" y2="199" stroke="#76e6c0" stroke-width="3"/><line x1="110" y1="187" x2="128" y2="199" stroke="#76e6c0" stroke-width="3"/>
-                <line x1="150" y1="220" x2="150" y2="176" stroke="#76e6c0" stroke-width="3"/><line x1="150" y1="187" x2="132" y2="199" stroke="#76e6c0" stroke-width="3"/><line x1="150" y1="187" x2="168" y2="199" stroke="#76e6c0" stroke-width="3"/>
-
-                <rect x="290" y="130" width="220" height="110" rx="18" fill="url(#infraBlue)" stroke="#244463"/>
-                <text x="400" y="164" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">HV / LV Power</text>
-                <text x="400" y="190" text-anchor="middle" fill="#c9d7e6" font-size="14">Distribution Concept</text>
-                <text x="400" y="213" text-anchor="middle" fill="#76e6c0" font-size="13">Towers • Data Centre • EV Charging</text>
-
-                <rect x="580" y="130" width="220" height="110" rx="18" fill="url(#infraBlue)" stroke="#244463"/>
-                <text x="690" y="164" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">Battery Storage</text>
-                <text x="690" y="190" text-anchor="middle" fill="#c9d7e6" font-size="14">Backup Power Sizing</text>
-                <text x="690" y="213" text-anchor="middle" fill="#76e6c0" font-size="13">Megapack Concept • 5.2h Backup</text>
-
-                <rect x="870" y="130" width="280" height="110" rx="18" fill="url(#infraBlue)" stroke="#244463"/>
-                <text x="1010" y="164" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">Data Centre</text>
-                <text x="1010" y="190" text-anchor="middle" fill="#c9d7e6" font-size="14">Electrical Load &amp; Capacity Planning</text>
-                <text x="1010" y="213" text-anchor="middle" fill="#76e6c0" font-size="13">Approx. 1.5 MW Demand</text>
-
-                <rect x="180" y="320" width="320" height="110" rx="18" fill="url(#infraBlue)" stroke="#244463"/>
-                <text x="340" y="355" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">Fibre Backbone / FTTH</text>
-                <text x="340" y="382" text-anchor="middle" fill="#c9d7e6" font-size="14">Backhaul &amp; Homestead Connectivity</text>
-                <text x="340" y="406" text-anchor="middle" fill="#58c7ff" font-size="13">OSP Routing • Backhaul • FTTH Concept</text>
-
-                <rect x="560" y="320" width="240" height="110" rx="18" fill="url(#infraBlue)" stroke="#244463"/>
-                <text x="680" y="355" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">5G Tower Network</text>
-                <text x="680" y="382" text-anchor="middle" fill="#c9d7e6" font-size="14">Coverage, LOS &amp; Height Analysis</text>
-                <text x="680" y="406" text-anchor="middle" fill="#58c7ff" font-size="13">Placement • Coverage • Road Connectivity</text>
-
-                <rect x="860" y="300" width="150" height="85" rx="18" fill="url(#infraGreen)" stroke="#244b4b"/>
-                <text x="935" y="334" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">Homesteads</text>
-                <text x="935" y="358" text-anchor="middle" fill="#c9fff1" font-size="13">FTTH / Service Reach</text>
-
-                <rect x="1040" y="300" width="110" height="85" rx="18" fill="url(#infraGreen)" stroke="#244b4b"/>
-                <text x="1095" y="334" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">EV</text>
-                <text x="1095" y="358" text-anchor="middle" fill="#c9fff1" font-size="13">Charging</text>
-
-                <rect x="860" y="410" width="290" height="80" rx="18" fill="#0b1a2b" stroke="#203b58"/>
-                <text x="880" y="438" fill="#fff" font-size="16" font-weight="700">Electrical Scope Included</text>
-                <text x="880" y="462" fill="#a9bbcf" font-size="13">Tower power • Data-centre load • Cooling</text>
-                <text x="880" y="482" fill="#a9bbcf" font-size="13">Battery backup • HV/LV concept • EV charging</text>
-
-                <line x1="220" y1="185" x2="290" y2="185" stroke="#76e6c0" stroke-width="5" marker-end="url(#arrowGreen)"/>
-                <line x1="510" y1="185" x2="580" y2="185" stroke="#76e6c0" stroke-width="5" marker-end="url(#arrowGreen)"/>
-                <line x1="800" y1="185" x2="870" y2="185" stroke="#76e6c0" stroke-width="5" marker-end="url(#arrowGreen)"/>
-                <line x1="400" y1="240" x2="400" y2="320" stroke="#58c7ff" stroke-width="5" marker-end="url(#arrowBlue)"/>
-                <line x1="500" y1="375" x2="560" y2="375" stroke="#58c7ff" stroke-width="5" marker-end="url(#arrowBlue)"/>
-                <line x1="800" y1="375" x2="860" y2="342" stroke="#58c7ff" stroke-width="4" marker-end="url(#arrowBlue)"/>
-                <line x1="800" y1="375" x2="1040" y2="342" stroke="#76e6c0" stroke-width="4" marker-end="url(#arrowGreen)"/>
-                <line x1="1010" y1="240" x2="1010" y2="278" stroke="#76e6c0" stroke-width="5"/><line x1="1010" y1="278" x2="1095" y2="278" stroke="#76e6c0" stroke-width="5"/><line x1="1095" y1="278" x2="1095" y2="300" stroke="#76e6c0" stroke-width="5" marker-end="url(#arrowGreen)"/>
+            <div class="project-visual" aria-label="Animated wind power fibre and 5G tower graphic">
+              <svg viewBox="0 0 320 118" role="img">
+                <line class="line green" x1="43" y1="96" x2="43" y2="42"/>
+                <g class="wind-rotate">
+                  <line class="line green" x1="43" y1="42" x2="43" y2="19"/>
+                  <line class="line green" x1="43" y1="42" x2="23" y2="54"/>
+                  <line class="line green" x1="43" y1="42" x2="63" y2="54"/>
+                </g>
+                <circle class="fill-green" cx="43" cy="42" r="4"/>
+                <path class="line green route-dash" d="M72 61h82"/>
+                <circle class="fill-green flow-dot" cx="97" cy="61" r="4"/>
+                <rect class="panel-fill" x="154" y="39" width="63" height="44" rx="9"/>
+                <text class="label" x="168" y="58">POWER</text><text class="label" x="169" y="72">+ FIBRE</text>
+                <path class="line route-dash" d="M217 61h38"/>
+                <circle class="fill-blue flow-dot delay" cx="232" cy="61" r="4"/>
+                <line class="line" x1="270" y1="98" x2="285" y2="29"/>
+                <line class="line" x1="300" y1="98" x2="285" y2="29"/>
+                <line class="line muted" x1="277" y1="65" x2="293" y2="65"/>
+                <line class="line muted" x1="274" y1="81" x2="296" y2="81"/>
+                <circle class="signal-ring line green" cx="285" cy="29" r="10"/>
+                <circle class="signal-ring delay line green" cx="285" cy="29" r="18"/>
+                <circle class="signal-ring delay2 line green" cx="285" cy="29" r="27"/>
+                <text class="label" x="81" y="111">WIND → POWER/FIBRE → 5G</text>
               </svg>
             </div>
-            <div class="concept-side">
-              <span class="tag">Electrical + Telecommunications</span>
-              <h3>Integrated Infrastructure Engineering</h3>
-              <p>This visual highlights the combined electrical, telecommunications and fibre scope of the Yass–Cowra concept study.</p>
-              <div class="concept-points">
-                <div class="concept-point"><strong>Electrical:</strong> HV/LV power concepts, telecom tower load calculations, data-centre demand assessment, battery-backup sizing and EV charging.</div>
-                <div class="concept-point"><strong>Telecommunications:</strong> 5G tower placement, coverage analysis, line-of-sight assessment, tower-height review and fibre backhaul planning.</div>
-                <div class="concept-point"><strong>Commercial:</strong> CAPEX/OPEX inputs, infrastructure cost estimates and investment-return analysis.</div>
-              </div>
-            </div>
+            <p>Developed the technical feasibility study and conceptual network design for a proposed 120 km regional telecommunications corridor between Yass and Cowra, NSW, including 5G tower placement and coverage analysis, propagation and line-of-sight assessment, tower-height evaluation, fibre/FTTH and backhaul routing, telecom architecture drawings, electrical load and power calculations, data-centre sizing, battery-backup calculations, HV/LV power concepts, EV-charging infrastructure, CAPEX/OPEX modelling and investment-return analysis. Prepared the engineering calculations, technical findings, network diagrams, route drawings and presentation materials for the study.</p>
           </div>
+
         </div>
       </div>
     </section>
