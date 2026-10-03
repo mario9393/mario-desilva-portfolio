@@ -208,6 +208,22 @@
     .edu-row{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .edu-card small{color:var(--accent2);font-weight:800}
     .edu-card h3{margin:10px 0 6px}
+    .qualification-details{margin-top:14px;border-top:1px solid rgba(255,255,255,.08);padding-top:12px}
+    .qualification-details summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;color:#dff4ff;font-weight:800;font-size:13px;padding:9px 11px;border:1px solid rgba(88,199,255,.16);background:rgba(88,199,255,.055);border-radius:11px;transition:.2s ease}
+    .qualification-details summary::-webkit-details-marker{display:none}
+    .qualification-details summary:hover{background:rgba(88,199,255,.10);border-color:rgba(88,199,255,.26)}
+    .qualification-details summary::after{content:"+";font-size:20px;line-height:1;color:var(--accent2);font-weight:500}
+    .qualification-details[open] summary::after{content:"−"}
+    .module-list{display:grid;gap:7px;margin-top:11px}
+    .module-row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:start;padding:9px 10px;border-radius:10px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.055)}
+    .module-name{color:#c9d7e6;font-size:12px;line-height:1.45}
+    .module-result{white-space:nowrap;color:#07111f;background:linear-gradient(135deg,var(--accent2),#a7f4d9);padding:4px 8px;border-radius:999px;font-size:11px;font-weight:900;min-width:45px;text-align:center}
+    .module-result.percent{background:linear-gradient(135deg,var(--accent),#a5e3ff)}
+    .module-result.neutral{color:#c9d7e6;background:#102239;border:1px solid var(--line)}
+    .module-group{margin-top:10px;padding:10px 10px 4px;border-top:1px dashed rgba(255,255,255,.08)}
+    .module-group-title{color:var(--accent2);font-size:11px;font-weight:900;letter-spacing:.4px;text-transform:uppercase;margin-bottom:8px}
+    .edu-click-hint{margin-top:10px;color:#7f95aa;font-size:11px}
+    @media (max-width:560px){.module-row{grid-template-columns:1fr}.module-result{justify-self:start}}
     .qualification-logos{
       display:flex;align-items:center;gap:10px;flex-wrap:wrap;
       margin:0 0 16px;
@@ -832,38 +848,122 @@
             <h3>Master of Business Administration (MBA)</h3>
             <div class="institution-line"><strong>Asia e University, Malaysia</strong></div>
             <p>B+ Grade • 2022</p>
+            <div class="edu-click-hint">Click below to view completed modules and results.</div>
+            <details class="qualification-details">
+              <summary>View modules &amp; grades</summary>
+              <div class="module-list">
+                <div class="module-row"><span class="module-name">Quality and Change Management</span><span class="module-result">A−</span></div>
+                <div class="module-row"><span class="module-name">Entrepreneurship and Innovation</span><span class="module-result">A−</span></div>
+                <div class="module-row"><span class="module-name">Strategic Management Asian Business</span><span class="module-result">A−</span></div>
+                <div class="module-row"><span class="module-name">International Marketing</span><span class="module-result">A−</span></div>
+                <div class="module-row"><span class="module-name">Enterprise Risk Management</span><span class="module-result">B+</span></div>
+                <div class="module-row"><span class="module-name">Accounting and Finance for Managers</span><span class="module-result">B+</span></div>
+                <div class="module-row"><span class="module-name">Managing People in Organizations</span><span class="module-result">B+</span></div>
+                <div class="module-row"><span class="module-name">International Business</span><span class="module-result">B+</span></div>
+                <div class="module-row"><span class="module-name">Managerial Economics</span><span class="module-result">B+</span></div>
+                <div class="module-row"><span class="module-name">Individual Project — “The Factors Shaping Overall HR Practices in a Post-Covid-19 Set Up with References to Start-ups”</span><span class="module-result">B+</span></div>
+                <div class="module-row"><span class="module-name">Marketing Management</span><span class="module-result">B</span></div>
+                <div class="module-row"><span class="module-name">Operation Management</span><span class="module-result">B</span></div>
+              </div>
+            </details>
           </div>
 
           <div class="card edu-card">
             <div class="qualification-logos"><div class="institution-logo"><img data-logo="wolverhampton" alt="University of Wolverhampton logo"></div></div>
             <small>BACHELOR'S DEGREE • ENGINEERING</small>
             <h3>Bachelor of Engineering with Honours</h3>
-            <div class="institution-line"><strong>Electronics & Communications Engineering • University of Wolverhampton, United Kingdom</strong></div>
+            <div class="institution-line"><strong>Electronics &amp; Communications Engineering • University of Wolverhampton, United Kingdom</strong></div>
             <p>Second Class Honours (First Division) • 2017</p>
+            <div class="edu-click-hint">Click below to view modules and marks.</div>
+            <details class="qualification-details">
+              <summary>View modules &amp; marks</summary>
+              <div class="module-list">
+                <div class="module-row"><span class="module-name">Analogue and Digital Electronics</span><span class="module-result percent">79%</span></div>
+                <div class="module-row"><span class="module-name">Signal Processing 1</span><span class="module-result percent">77%</span></div>
+                <div class="module-row"><span class="module-name">Individual Project — Low-Cost SMART Intelligent Plant Monitoring System for Home Gardening and Mass Scale Plantations</span><span class="module-result percent">69%</span></div>
+                <div class="module-row"><span class="module-name">Electro Mechanical Control Systems</span><span class="module-result percent">68%</span></div>
+                <div class="module-row"><span class="module-name">Telecommunications</span><span class="module-result percent">68%</span></div>
+                <div class="module-row"><span class="module-name">Control Engineering</span><span class="module-result percent">68%</span></div>
+                <div class="module-row"><span class="module-name">The Professional Engineer and Microelectronics</span><span class="module-result percent">67%</span></div>
+                <div class="module-row"><span class="module-name">Signal Processing 2</span><span class="module-result percent">65%</span></div>
+                <div class="module-row"><span class="module-name">Engineering Innovation and Enterprise</span><span class="module-result percent">65%</span></div>
+                <div class="module-row"><span class="module-name">Microwave Engineering</span><span class="module-result percent">62%</span></div>
+                <div class="module-row"><span class="module-name">Engineering Management</span><span class="module-result percent">59%</span></div>
+              </div>
+            </details>
           </div>
 
           <div class="card edu-card">
             <div class="qualification-logos"><div class="institution-logo"><img data-logo="iesl" alt="IESL College of Engineering logo"></div></div>
             <small>ENGINEERING GRADUATE DIPLOMA</small>
-            <h3>Electronics, Telecommunications & Computer Engineering</h3>
+            <h3>Electronics, Telecommunications &amp; Computer Engineering</h3>
             <div class="institution-line"><strong>IESL College of Engineering, Sri Lanka</strong></div>
             <p>Merit Pass • 2018</p>
+            <div class="edu-click-hint">Click below to view exemptions, Year 5 modules and grades.</div>
+            <details class="qualification-details">
+              <summary>View stages, modules &amp; grades</summary>
+              <div class="module-group">
+                <div class="module-group-title">Exempted Stages</div>
+                <div class="module-list">
+                  <div class="module-row"><span class="module-name">Certificate Level Stage 1 — Year 1</span><span class="module-result neutral">Exempted</span></div>
+                  <div class="module-row"><span class="module-name">Certificate Level Stage 2 — Year 2</span><span class="module-result neutral">Exempted</span></div>
+                  <div class="module-row"><span class="module-name">Advanced Diploma Level Stage 1 — Year 3</span><span class="module-result neutral">Exempted</span></div>
+                  <div class="module-row"><span class="module-name">Advanced Diploma Level Stage 2 — Year 4</span><span class="module-result neutral">Exempted</span></div>
+                </div>
+              </div>
+              <div class="module-group">
+                <div class="module-group-title">Graduate Diploma Level — Year 5</div>
+                <div class="module-list">
+                  <div class="module-row"><span class="module-name">Individual Project — Updated Version of Low-Cost SMART Intelligent Plant Monitoring System for Home Gardening and Mass Scale Plantations</span><span class="module-result">A</span></div>
+                  <div class="module-row"><span class="module-name">Communications Systems</span><span class="module-result">A</span></div>
+                  <div class="module-row"><span class="module-name">System Design and Administration</span><span class="module-result">A</span></div>
+                  <div class="module-row"><span class="module-name">Database Management Systems</span><span class="module-result">A</span></div>
+                  <div class="module-row"><span class="module-name">Management 3</span><span class="module-result">B</span></div>
+                  <div class="module-row"><span class="module-name">Humanities 2</span><span class="module-result">B</span></div>
+                  <div class="module-row"><span class="module-name">Digital Signal Processing</span><span class="module-result">C</span></div>
+                  <div class="module-row"><span class="module-name">Compute Security</span><span class="module-result">C</span></div>
+                </div>
+              </div>
+            </details>
           </div>
 
           <div class="card edu-card">
             <div class="qualification-logos"><div class="institution-logo"><img data-logo="city-guilds" alt="City & Guilds logo"></div></div>
-            <small>CITY & GUILDS</small>
+            <small>CITY &amp; GUILDS</small>
             <h3>Level 5 IVQ Advanced Technician Diploma</h3>
-            <div class="institution-line"><strong>Electrical & Electronic Engineering</strong></div>
+            <div class="institution-line"><strong>Electrical &amp; Electronic Engineering</strong></div>
             <p>2015</p>
+            <div class="edu-click-hint">Click below to view subjects and results.</div>
+            <details class="qualification-details">
+              <summary>View subjects &amp; results</summary>
+              <div class="module-list">
+                <div class="module-row"><span class="module-name">Advanced Technician Diploma in Electronic Engineering Theory</span><span class="module-result neutral">Completed</span></div>
+                <div class="module-row"><span class="module-name">Microelectronic Circuits and Systems</span><span class="module-result">Merit</span></div>
+                <div class="module-row"><span class="module-name">Applied Technician Diploma in Electrical Engineering Theory</span><span class="module-result neutral">Completed</span></div>
+                <div class="module-row"><span class="module-name">Distribution &amp; Utilization of Electrical Energy</span><span class="module-result">Pass</span></div>
+                <div class="module-row"><span class="module-name">Advanced Electrical Principals</span><span class="module-result">Pass</span></div>
+                <div class="module-row"><span class="module-name">Engineering Project Practical Assignment</span><span class="module-result">Pass</span></div>
+              </div>
+            </details>
           </div>
 
           <div class="card edu-card">
             <div class="qualification-logos"><div class="institution-logo"><img data-logo="city-guilds" alt="City & Guilds logo"></div></div>
-            <small>CITY & GUILDS</small>
+            <small>CITY &amp; GUILDS</small>
             <h3>Level 3 IVQ Technician Diploma</h3>
-            <div class="institution-line"><strong>Electrical & Electronic Engineering</strong></div>
+            <div class="institution-line"><strong>Electrical &amp; Electronic Engineering</strong></div>
             <p>2014</p>
+            <div class="edu-click-hint">Click below to view subjects and results.</div>
+            <details class="qualification-details">
+              <summary>View subjects &amp; results</summary>
+              <div class="module-list">
+                <div class="module-row"><span class="module-name">Technician Diploma in Electrical Engineering Theory, Electrical Power</span><span class="module-result">Pass</span></div>
+                <div class="module-row"><span class="module-name">Engineering Fundamentals 2</span><span class="module-result">Merit</span></div>
+                <div class="module-row"><span class="module-name">Computer Aided Communication Practical Assignments</span><span class="module-result">Pass</span></div>
+                <div class="module-row"><span class="module-name">Electronic Practical Assignments</span><span class="module-result">Pass</span></div>
+                <div class="module-row"><span class="module-name">Electrical Power Practical Assignments</span><span class="module-result">Pass</span></div>
+              </div>
+            </details>
           </div>
         </div>
 
