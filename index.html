@@ -270,7 +270,26 @@
     @keyframes mapPulse{0%{opacity:.2;transform:scale(.6)}70%{opacity:.9}100%{opacity:0;transform:scale(1.35)}}
     @keyframes mapDash{to{stroke-dashoffset:-120}}
     @media (prefers-reduced-motion:reduce){.map-route,.map-pulse{animation:none!important}}
+    .contact-card{
+      display:grid;
+      grid-template-columns:1.25fr auto;
+      gap:24px;
+      align-items:center;
+      background:linear-gradient(135deg,rgba(15,30,49,.96),rgba(10,24,41,.96));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 16px 42px rgba(0,0,0,.18);
+    }
+    .contact-card h3{margin:0 0 8px;font-size:24px}
+    .contact-card p{margin:0;color:#c6d3e1}
+    .contact-email{margin-top:10px;color:var(--accent2);font-weight:800;word-break:break-word}
+    .copyright-note{margin-top:8px;color:#6f879e;font-size:12px;line-height:1.55}
     footer{padding:32px 0 46px;color:#7f95aa;font-size:13px;text-align:center}
+    @media (max-width:700px){
+      .contact-card{grid-template-columns:1fr}
+      .contact-card .btn{justify-self:start}
+    }
 
     .field-slider{padding:28px 0 10px}
     .field-slider-shell{
@@ -422,6 +441,7 @@
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
           <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
         </div>
       </nav>
     </div>
@@ -1172,11 +1192,29 @@
         </div>
       </div>
     </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div><h2>Contact</h2></div>
+          <p>Open to discussions about engineering, telecommunications, infrastructure and project-management opportunities.</p>
+        </div>
+        <div class="contact-card">
+          <div>
+            <h3>Get in touch</h3>
+            <p>If you would like to discuss a role, project, collaboration or professional opportunity, you can contact me directly by email.</p>
+            <div class="contact-email">marioshyomaldesilva@gmail.com</div>
+          </div>
+          <a class="btn primary" href="mailto:marioshyomaldesilva@gmail.com?subject=Professional%20Opportunity%20-%20Mario%20Shyomal%20De%20Silva">Email Me</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="container">
-      © 2026 Mario Shyomal De Silva • Engineering Project Manager • Telecommunications Engineer
+      <div>© 2026 Mario Shyomal De Silva. All rights reserved.</div>
+      <div class="copyright-note">Portfolio content, project descriptions, graphics and supporting materials are the intellectual property of Mario Shyomal De Silva unless otherwise stated. Reproduction, redistribution or reuse without permission is prohibited.</div>
     </div>
   </footer>
 
