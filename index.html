@@ -231,8 +231,27 @@
       margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.08);
       color:#a9bbcf;font-size:12px;
     }
-    .regions{display:flex;gap:10px;flex-wrap:wrap}
-    .region{padding:9px 12px;border-radius:12px;border:1px solid var(--line);color:#c8d6e4;background:#0b1a2b;font-size:13px}
+    .region-map-card{padding:18px}
+    .region-map-wrap{border:1px solid rgba(255,255,255,.08);border-radius:22px;overflow:hidden;background:linear-gradient(180deg,rgba(10,24,41,.96),rgba(7,17,31,.98));box-shadow:0 16px 40px rgba(0,0,0,.20)}
+    .region-map-svg{width:100%;height:auto;display:block}
+    .map-grid line{stroke:rgba(255,255,255,.045);stroke-width:1}
+    .map-land{fill:#102943;stroke:#264f73;stroke-width:2}
+    .map-land.soft{fill:#0d302f;stroke:#2d6d66}
+    .map-route{fill:none;stroke:#58c7ff;stroke-width:2.5;stroke-dasharray:8 8;opacity:.82;animation:mapDash 10s linear infinite}
+    .map-route.alt{stroke:#76e6c0}
+    .map-pin{fill:#76e6c0;stroke:#07111f;stroke-width:2}
+    .map-pin.blue{fill:#58c7ff}
+    .map-pulse{transform-box:fill-box;transform-origin:center;fill:none;stroke:#76e6c0;stroke-width:2;opacity:.7;animation:mapPulse 2.4s ease-out infinite}
+    .map-pulse.delay{animation-delay:.9s}
+    .map-label{fill:#edf5ff;font-size:14px;font-weight:700}
+    .map-sub{fill:#a9bbcf;font-size:11px}
+    .map-legend{display:flex;flex-wrap:wrap;gap:10px;padding:14px 18px 18px}
+    .map-legend span{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:#d7e4f1;font-size:13px}
+    .map-dot{width:10px;height:10px;border-radius:50%;background:#76e6c0;display:inline-block}
+    .map-dot.blue{background:#58c7ff}
+    @keyframes mapPulse{0%{opacity:.2;transform:scale(.6)}70%{opacity:.9}100%{opacity:0;transform:scale(1.35)}}
+    @keyframes mapDash{to{stroke-dashoffset:-120}}
+    @media (prefers-reduced-motion:reduce){.map-route,.map-pulse{animation:none!important}}
     footer{padding:32px 0 46px;color:#7f95aa;font-size:13px;text-align:center}
 
     .field-slider{padding:28px 0 10px}
@@ -929,14 +948,91 @@
           <div><h2>Regional Experience</h2></div>
           <p>Worked across multi-country engineering environments with field teams, telecom infrastructure owners, service providers and senior stakeholders.</p>
         </div>
-        <div class="regions">
-          <span class="region">Australia</span>
-          <span class="region">Malaysia</span>
-          <span class="region">Bangladesh</span>
-          <span class="region">Myanmar</span>
-          <span class="region">India</span>
-          <span class="region">Indonesia</span>
-          <span class="region">Sri Lanka</span>
+
+        <div class="card region-map-card">
+          <div class="region-map-wrap">
+            <svg class="region-map-svg" viewBox="0 0 1100 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map showing engineering experience across Australia and Asia">
+              <g class="map-grid">
+                <line x1="0" y1="70" x2="1100" y2="70"/><line x1="0" y1="140" x2="1100" y2="140"/><line x1="0" y1="210" x2="1100" y2="210"/><line x1="0" y1="280" x2="1100" y2="280"/><line x1="0" y1="350" x2="1100" y2="350"/>
+                <line x1="110" y1="0" x2="110" y2="470"/><line x1="220" y1="0" x2="220" y2="470"/><line x1="330" y1="0" x2="330" y2="470"/><line x1="440" y1="0" x2="440" y2="470"/><line x1="550" y1="0" x2="550" y2="470"/><line x1="660" y1="0" x2="660" y2="470"/><line x1="770" y1="0" x2="770" y2="470"/><line x1="880" y1="0" x2="880" y2="470"/><line x1="990" y1="0" x2="990" y2="470"/>
+              </g>
+
+              <text x="36" y="42" fill="#edf5ff" font-size="28" font-weight="800">Regional Engineering Footprint</text>
+              <text x="36" y="68" fill="#a9bbcf" font-size="14">Australia and Asia — project delivery, telecom engineering, infrastructure planning and field coordination</text>
+
+              <!-- Stylised South & Southeast Asia -->
+              <path class="map-land" d="M205 118 L246 96 L292 118 L278 146 L286 170 L270 198 L251 235 L220 202 L205 169 L191 145 Z"/>
+              <ellipse class="map-land soft" cx="254" cy="245" rx="15" ry="22"/>
+              <path class="map-land" d="M303 100 L348 91 L391 112 L414 145 L437 169 L425 193 L398 208 L385 239 L362 255 L339 234 L335 206 L322 184 L305 155 Z"/>
+              <ellipse class="map-land soft" cx="430" cy="280" rx="42" ry="18"/>
+              <ellipse class="map-land soft" cx="495" cy="296" rx="55" ry="18"/>
+              <ellipse class="map-land soft" cx="575" cy="310" rx="42" ry="15"/>
+
+              <!-- Australia -->
+              <path class="map-land" d="M700 238 L770 220 L836 235 L886 278 L874 334 L816 365 L742 354 L694 311 L680 272 Z"/>
+
+              <!-- Animated project routes -->
+              <path class="map-route" d="M255 245 C285 214,315 184,357 170"/>
+              <path class="map-route alt" d="M357 170 C398 191,428 245,490 294"/>
+              <path class="map-route" d="M490 294 C570 296,648 287,780 288"/>
+              <path class="map-route alt" d="M230 158 C275 137,294 122,316 115"/>
+              <path class="map-route" d="M316 115 C330 119,340 126,350 135"/>
+
+              <!-- India -->
+              <circle class="map-pin blue" cx="230" cy="158" r="8"/>
+              <circle class="map-pulse" cx="230" cy="158" r="13"/><circle class="map-pulse delay" cx="230" cy="158" r="13"/>
+              <line x1="230" y1="158" x2="145" y2="128" stroke="#58c7ff" stroke-width="2"/>
+              <text class="map-label" x="55" y="126">India</text>
+              <text class="map-sub" x="55" y="145">Tower audits • field coordination</text>
+
+              <!-- Sri Lanka -->
+              <circle class="map-pin" cx="254" cy="245" r="8"/>
+              <circle class="map-pulse" cx="254" cy="245" r="13"/><circle class="map-pulse delay" cx="254" cy="245" r="13"/>
+              <line x1="254" y1="245" x2="168" y2="271" stroke="#76e6c0" stroke-width="2"/>
+              <text class="map-label" x="54" y="274">Sri Lanka</text>
+              <text class="map-sub" x="54" y="293">Telecom engineering base</text>
+
+              <!-- Bangladesh -->
+              <circle class="map-pin blue" cx="316" cy="115" r="8"/>
+              <circle class="map-pulse" cx="316" cy="115" r="13"/>
+              <line x1="316" y1="115" x2="425" y2="96" stroke="#58c7ff" stroke-width="2"/>
+              <text class="map-label" x="437" y="94">Bangladesh</text>
+              <text class="map-sub" x="437" y="112">100-site programme</text>
+
+              <!-- Myanmar -->
+              <circle class="map-pin" cx="350" cy="135" r="8"/>
+              <circle class="map-pulse delay" cx="350" cy="135" r="13"/>
+              <line x1="350" y1="135" x2="470" y2="144" stroke="#76e6c0" stroke-width="2"/>
+              <text class="map-label" x="482" y="145">Myanmar</text>
+              <text class="map-sub" x="482" y="163">Telecom field projects</text>
+
+              <!-- Malaysia -->
+              <circle class="map-pin blue" cx="357" cy="205" r="8"/>
+              <circle class="map-pulse" cx="357" cy="205" r="13"/>
+              <line x1="357" y1="205" x2="468" y2="214" stroke="#58c7ff" stroke-width="2"/>
+              <text class="map-label" x="480" y="214">Malaysia</text>
+              <text class="map-sub" x="480" y="232">Telsoft project delivery</text>
+
+              <!-- Indonesia -->
+              <circle class="map-pin" cx="490" cy="294" r="8"/>
+              <circle class="map-pulse delay" cx="490" cy="294" r="13"/>
+              <line x1="490" y1="294" x2="602" y2="327" stroke="#76e6c0" stroke-width="2"/>
+              <text class="map-label" x="613" y="327">Indonesia</text>
+              <text class="map-sub" x="613" y="345">Rural broadband & network studies</text>
+
+              <!-- Australia -->
+              <circle class="map-pin blue" cx="780" cy="288" r="8"/>
+              <circle class="map-pulse" cx="780" cy="288" r="13"/><circle class="map-pulse delay" cx="780" cy="288" r="13"/>
+              <line x1="780" y1="288" x2="905" y2="260" stroke="#58c7ff" stroke-width="2"/>
+              <text class="map-label" x="918" y="258">Australia</text>
+              <text class="map-sub" x="918" y="276">5G, fibre & infrastructure planning</text>
+            </svg>
+
+            <div class="map-legend">
+              <span><i class="map-dot blue"></i> Telecommunications / planning / delivery</span>
+              <span><i class="map-dot"></i> Engineering / infrastructure / coordination</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
