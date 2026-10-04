@@ -7,16 +7,16 @@
   <title>Mario Shyomal De Silva | Engineering Project Manager & Telecommunications Engineer</title>
   <style>
     :root{
-      --bg:#07111f;
-      --bg2:#0b1728;
-      --panel:#0f1e31;
-      --panel2:#12253c;
-      --text:#edf5ff;
-      --muted:#a9bbcf;
-      --line:#203b58;
-      --accent:#58c7ff;
-      --accent2:#76e6c0;
-      --shadow:0 18px 50px rgba(0,0,0,.26);
+      --bg:#f5f9fd;
+      --bg2:#eef4f9;
+      --panel:#ffffff;
+      --panel2:#eef7fb;
+      --text:#10243a;
+      --muted:#5f7387;
+      --line:#cfe0ed;
+      --accent:#2f8ed8;
+      --accent2:#1fa98b;
+      --shadow:0 18px 45px rgba(28,67,96,.10);
       --radius:22px;
       --max:1180px;
     }
@@ -26,9 +26,9 @@
       margin:0;
       font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 10% 5%, rgba(88,199,255,.12), transparent 30%),
-        radial-gradient(circle at 90% 15%, rgba(118,230,192,.10), transparent 26%),
-        linear-gradient(180deg,var(--bg),#081522 48%,#07101b);
+        radial-gradient(circle at 8% 4%, rgba(47,142,216,.10), transparent 26%),
+        radial-gradient(circle at 92% 14%, rgba(31,169,139,.08), transparent 24%),
+        linear-gradient(180deg,var(--bg),#ffffff 44%,var(--bg2));
       color:var(--text);
       line-height:1.65;
     }
@@ -37,8 +37,9 @@
     .nav-wrap{
       position:sticky;top:0;z-index:40;
       backdrop-filter: blur(14px);
-      background:rgba(7,17,31,.82);
-      border-bottom:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.88);
+      border-bottom:1px solid rgba(16,36,58,.08);
+      box-shadow:0 6px 20px rgba(28,67,96,.05);
     }
     nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
     .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
@@ -50,8 +51,8 @@
       box-shadow:0 10px 26px rgba(88,199,255,.22);
     }
     .nav-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
-    .nav-links a{font-size:14px;color:var(--muted)}
-    .nav-links a:hover{color:var(--text)}
+    .nav-links a{font-size:14px;color:#516679;font-weight:700}
+    .nav-links a:hover{color:var(--accent)}
     .hero{padding:92px 0 56px}
     .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:36px;align-items:center}
     .eyebrow{
@@ -93,20 +94,20 @@
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{
-      background:linear-gradient(180deg,rgba(15,30,49,.95),rgba(10,24,41,.95));
-      border:1px solid rgba(255,255,255,.075);border-radius:var(--radius);padding:24px;
-      box-shadow:0 12px 34px rgba(0,0,0,.15)
+      background:linear-gradient(180deg,#ffffff,#f9fcff);
+      border:1px solid rgba(31,87,126,.10);border-radius:var(--radius);padding:24px;
+      box-shadow:0 14px 36px rgba(28,67,96,.08)
     }
     .card h3{margin:0 0 7px;font-size:20px}
     .card .meta{color:var(--accent2);font-weight:700;font-size:13px;margin-bottom:11px}
-    .card p{color:#c6d3e1;margin:0}
+    .card p{color:#5f7387;margin:0}
     .timeline{display:grid;gap:18px}
-    .job{display:grid;grid-template-columns:210px 1fr;gap:24px;padding:26px;background:rgba(12,27,45,.82);border:1px solid rgba(255,255,255,.07);border-radius:22px}
+    .job{display:grid;grid-template-columns:210px 1fr;gap:24px;padding:26px;background:linear-gradient(180deg,#ffffff,#f7fbfe);border:1px solid rgba(31,87,126,.10);border-radius:22px;box-shadow:0 12px 30px rgba(28,67,96,.07)}
     .job .date{color:var(--accent2);font-weight:800}
     .job .place{color:var(--muted);font-size:13px;margin-top:6px}
     .job h3{margin:0 0 2px;font-size:21px}
-    .job h4{margin:0 0 12px;color:#c9d7e6;font-size:15px;font-weight:600}
-    .job ul{margin:0;padding-left:18px;color:#c6d3e1}
+    .job h4{margin:0 0 12px;color:#52697d;font-size:15px;font-weight:600}
+    .job ul{margin:0;padding-left:18px;color:#5f7387}
     .job li{margin:6px 0}
     .job-brand{
       display:flex;align-items:center;gap:14px;margin-bottom:12px;
@@ -133,9 +134,10 @@
       display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px;
     }
     .credential-card{
-      background:linear-gradient(180deg,rgba(15,30,49,.95),rgba(10,24,41,.95));
-      border:1px solid rgba(255,255,255,.075);
+      background:linear-gradient(180deg,#ffffff,#f8fbfd);
+      border:1px solid rgba(31,87,126,.10);
       border-radius:18px;padding:18px;
+      box-shadow:0 10px 28px rgba(28,67,96,.06);
     }
     .credential-logo{
       height:66px;min-width:96px;max-width:190px;
@@ -152,7 +154,7 @@
     }
     .credential-card small{color:var(--accent2);font-size:11px;font-weight:800;letter-spacing:.3px}
     .credential-card h3{font-size:16px;margin:7px 0 6px}
-    .credential-card p{font-size:13px;color:#b9c9d9;margin:0}
+    .credential-card p{font-size:13px;color:#667b8e;margin:0}
     .credential-card .credential-meta{font-size:11px;color:#7f95aa;margin-top:10px}
     .project h3{font-size:18px}
     .project .tag{display:inline-block;font-size:11px;font-weight:800;color:#bfefff;background:rgba(88,199,255,.08);border:1px solid rgba(88,199,255,.22);padding:4px 8px;border-radius:999px;margin-bottom:12px}
@@ -160,8 +162,8 @@
       margin:14px 0 16px;
       padding:10px 12px;
       border-radius:16px;
-      background:linear-gradient(180deg,rgba(7,22,38,.96),rgba(6,17,31,.98));
-      border:1px solid rgba(255,255,255,.065);
+      background:linear-gradient(180deg,#eef7fb,#e7f2f8);
+      border:1px solid rgba(31,87,126,.10);
       min-height:126px;
       display:flex;
       align-items:center;
@@ -174,10 +176,10 @@
     .project-visual .muted{stroke:#6d8ba7}
     .project-visual .fill-blue{fill:#58c7ff}
     .project-visual .fill-green{fill:#76e6c0}
-    .project-visual .panel-fill{fill:#102943;stroke:#285071;stroke-width:1.5}
-    .project-visual .soft-fill{fill:#0d302f;stroke:#24514e;stroke-width:1.5}
+    .project-visual .panel-fill{fill:#dfeef7;stroke:#7ca9c9;stroke-width:1.5}
+    .project-visual .soft-fill{fill:#dff3ed;stroke:#63a99a;stroke-width:1.5}
     .project-visual text{font-family:Inter,ui-sans-serif,system-ui,sans-serif}
-    .project-visual .label{fill:#dbeafa;font-size:10px;font-weight:700}
+    .project-visual .label{fill:#28445b;font-size:10px;font-weight:800}
     .signal-ring{transform-box:fill-box;transform-origin:center;animation:signalPulse 2.3s ease-out infinite}
     .signal-ring.delay{animation-delay:.75s}
     .signal-ring.delay2{animation-delay:1.5s}
@@ -204,19 +206,19 @@
     .skills-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .skill-card h3{margin:0 0 12px;font-size:17px}
     .skill-list{display:flex;gap:8px;flex-wrap:wrap}
-    .skill-list span{border:1px solid var(--line);background:#0c1b2d;color:#cbd8e6;padding:7px 10px;border-radius:10px;font-size:12px}
+    .skill-list span{border:1px solid var(--line);background:#f4f9fc;color:#41596d;padding:7px 10px;border-radius:10px;font-size:12px}
     .edu-row{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .edu-card small{color:var(--accent2);font-weight:800}
     .edu-card h3{margin:10px 0 6px}
     .qualification-details{margin-top:14px;border-top:1px solid rgba(255,255,255,.08);padding-top:12px}
-    .qualification-details summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;color:#dff4ff;font-weight:800;font-size:13px;padding:9px 11px;border:1px solid rgba(88,199,255,.16);background:rgba(88,199,255,.055);border-radius:11px;transition:.2s ease}
+    .qualification-details summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;color:#24455f;font-weight:800;font-size:13px;padding:9px 11px;border:1px solid rgba(47,142,216,.18);background:#eef7fb;border-radius:11px;transition:.2s ease}
     .qualification-details summary::-webkit-details-marker{display:none}
-    .qualification-details summary:hover{background:rgba(88,199,255,.10);border-color:rgba(88,199,255,.26)}
+    .qualification-details summary:hover{background:#e5f2f8;border-color:rgba(47,142,216,.30)}
     .qualification-details summary::after{content:"+";font-size:20px;line-height:1;color:var(--accent2);font-weight:500}
     .qualification-details[open] summary::after{content:"−"}
     .module-list{display:grid;gap:7px;margin-top:11px}
-    .module-row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:start;padding:9px 10px;border-radius:10px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.055)}
-    .module-name{color:#c9d7e6;font-size:12px;line-height:1.45}
+    .module-row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:start;padding:9px 10px;border-radius:10px;background:#f8fbfd;border:1px solid rgba(31,87,126,.08)}
+    .module-name{color:#52687b;font-size:12px;line-height:1.45}
     .module-result{white-space:nowrap;color:#07111f;background:linear-gradient(135deg,var(--accent2),#a7f4d9);padding:4px 8px;border-radius:999px;font-size:11px;font-weight:900;min-width:45px;text-align:center}
     .module-result.percent{background:linear-gradient(135deg,var(--accent),#a5e3ff)}
     .module-result.neutral{color:#c9d7e6;background:#102239;border:1px solid var(--line)}
@@ -233,8 +235,8 @@
     .achievement-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     .achievement-card{
       display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:center;
-      padding:15px;border-radius:15px;background:rgba(255,255,255,.025);
-      border:1px solid rgba(255,255,255,.06)
+      padding:15px;border-radius:15px;background:#f8fbfd;
+      border:1px solid rgba(31,87,126,.08)
     }
     .achievement-logo{
       width:72px;height:72px;border-radius:14px;background:#fff;
@@ -242,7 +244,7 @@
     }
     .achievement-logo img{max-width:100%;max-height:100%;object-fit:contain;display:block}
     .achievement-card h4{margin:0 0 4px;font-size:14px}
-    .achievement-card p{margin:0;color:#a9bbcf;font-size:12px;line-height:1.45}
+    .achievement-card p{margin:0;color:#65798b;font-size:12px;line-height:1.45}
     .school-kicker{color:var(--accent2);font-size:11px;font-weight:900;letter-spacing:.4px}
     @media (max-width:900px){.school-achievements{grid-template-columns:1fr}.achievement-grid{grid-template-columns:1fr 1fr}}
     @media (max-width:560px){.achievement-grid{grid-template-columns:1fr}}
@@ -264,17 +266,17 @@
     }
     .institution-logo.square{min-width:74px;width:74px;padding:8px}
     .institution-logo.square img{max-width:56px;max-height:56px}
-    .institution-line{color:#a9bbcf;font-size:13px;margin:3px 0 10px}
-    .institution-line strong{color:#edf5ff}
+    .institution-line{color:#65798b;font-size:13px;margin:3px 0 10px}
+    .institution-line strong{color:#10243a}
     .award-detail{
       margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.08);
       color:#a9bbcf;font-size:12px;
     }
     .region-map-card{padding:18px}
-    .region-map-wrap{border:1px solid rgba(255,255,255,.08);border-radius:22px;overflow:hidden;background:linear-gradient(180deg,rgba(10,24,41,.96),rgba(7,17,31,.98));box-shadow:0 16px 40px rgba(0,0,0,.20)}
+    .region-map-wrap{border:1px solid rgba(31,87,126,.10);border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#f9fcff,#eef5fa);box-shadow:0 16px 40px rgba(28,67,96,.08)}
     .region-map-svg{width:100%;height:auto;display:block}
     .real-world-map{opacity:.56;filter:saturate(.55) brightness(.72) contrast(1.15)}
-    .map-label-box{fill:rgba(7,17,31,.90);stroke:rgba(255,255,255,.10);stroke-width:1}
+    .map-label-box{fill:rgba(255,255,255,.92);stroke:rgba(31,87,126,.12);stroke-width:1}
     .map-grid line{stroke:rgba(255,255,255,.045);stroke-width:1}
     .map-land{fill:#102943;stroke:#264f73;stroke-width:2}
     .map-land.soft{fill:#0d302f;stroke:#2d6d66}
@@ -284,10 +286,10 @@
     .map-pin.blue{fill:#58c7ff}
     .map-pulse{transform-box:fill-box;transform-origin:center;fill:none;stroke:#76e6c0;stroke-width:2;opacity:.7;animation:mapPulse 2.4s ease-out infinite}
     .map-pulse.delay{animation-delay:.9s}
-    .map-label{fill:#edf5ff;font-size:14px;font-weight:700}
-    .map-sub{fill:#a9bbcf;font-size:11px}
+    .map-label{fill:#10243a;font-size:14px;font-weight:800}
+    .map-sub{fill:#5f7387;font-size:11px}
     .map-legend{display:flex;flex-wrap:wrap;gap:10px;padding:14px 18px 18px}
-    .map-legend span{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:#d7e4f1;font-size:13px}
+    .map-legend span{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#ffffff;border:1px solid rgba(31,87,126,.10);color:#425b70;font-size:13px}
     .map-dot{width:10px;height:10px;border-radius:50%;background:#76e6c0;display:inline-block}
     .map-dot.blue{background:#58c7ff}
     @keyframes mapPulse{0%{opacity:.2;transform:scale(.6)}70%{opacity:.9}100%{opacity:0;transform:scale(1.35)}}
@@ -298,17 +300,17 @@
       grid-template-columns:1.25fr auto;
       gap:24px;
       align-items:center;
-      background:linear-gradient(135deg,rgba(15,30,49,.96),rgba(10,24,41,.96));
-      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(135deg,#ffffff,#eef7fb);
+      border:1px solid rgba(31,87,126,.10);
       border-radius:24px;
       padding:28px;
       box-shadow:0 16px 42px rgba(0,0,0,.18);
     }
     .contact-card h3{margin:0 0 8px;font-size:24px}
-    .contact-card p{margin:0;color:#c6d3e1}
+    .contact-card p{margin:0;color:#5f7387}
     .contact-email{margin-top:10px;color:var(--accent2);font-weight:800;word-break:break-word}
-    .copyright-note{margin-top:8px;color:#6f879e;font-size:12px;line-height:1.55}
-    footer{padding:32px 0 46px;color:#7f95aa;font-size:13px;text-align:center}
+    .copyright-note{margin-top:8px;color:#8fa6b8;font-size:12px;line-height:1.55}
+    footer{padding:36px 0 50px;color:#a9bbcf;font-size:13px;text-align:center;background:#0b1b2b;border-top:1px solid rgba(255,255,255,.08)}
     @media (max-width:700px){
       .contact-card{grid-template-columns:1fr}
       .contact-card .btn{justify-self:start}
@@ -428,6 +430,43 @@
     @media (max-width:900px){
       .telecom-hero-zone .hero-grid{padding:22px}
     }
+    .section-shell{position:relative;overflow:hidden}
+    .section-shell::before{
+      content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+      background:
+        radial-gradient(circle at 12% 12%,rgba(47,142,216,.07),transparent 24%),
+        radial-gradient(circle at 88% 15%,rgba(31,169,139,.06),transparent 20%);
+    }
+    .section-shell>.container{position:relative;z-index:1}
+    .section-shell.alt{background:linear-gradient(180deg,#edf5fa,#f7fbfd)}
+    .section-shell.white{background:#fff}
+    .section-shell.bluewash{background:linear-gradient(180deg,#eef7fb,#e9f4f8)}
+    .section-divider{height:54px;position:relative;overflow:hidden}
+    .section-divider svg{display:block;width:100%;height:100%}
+    .section-divider .dline{fill:none;stroke:#8cbad5;stroke-width:1.5;opacity:.55}
+    .section-divider .dline2{fill:none;stroke:#8dd1bf;stroke-width:1.5;opacity:.55}
+    .section-divider circle{fill:#2f8ed8;opacity:.65}
+    .section-divider .green-dot{fill:#1fa98b}
+    .section-head{position:relative}
+    .section-head h2::after{
+      content:"";display:block;width:62px;height:4px;margin-top:10px;border-radius:999px;
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+    }
+    .hero-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+    .hero-metric{
+      background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);
+      border-radius:15px;padding:12px 13px;backdrop-filter:blur(8px)
+    }
+    .hero-metric strong{display:block;color:#fff;font-size:18px;line-height:1.1}
+    .hero-metric span{display:block;color:#c9d7e6;font-size:11px;margin-top:4px}
+    .section-mini-graphic{
+      display:flex;gap:8px;align-items:center;margin-bottom:10px;color:var(--accent);
+      font-weight:900;font-size:11px;letter-spacing:.7px;text-transform:uppercase
+    }
+    .section-mini-graphic span{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:18px 0 0 var(--accent2),36px 0 0 #b6d7e9;margin-right:34px}
+    @media (max-width:900px){.hero-metrics{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:560px){.hero-metrics{grid-template-columns:1fr 1fr}}
+
     .hide-print{}
     @media (max-width:900px){
       .hero-grid,.grid-2,.grid-3,.skills-wrap,.edu-row,.credential-grid{grid-template-columns:1fr}
@@ -548,7 +587,7 @@
     <section id="about">
       <div class="container">
         <div class="section-head">
-          <div><h2>Professional Profile</h2></div>
+          <div><div class="section-mini-graphic"><span></span>Engineering Portfolio</div><h2>Professional Profile</h2></div>
           <p>International project and telecommunications experience combining technical delivery, operational improvement, systems implementation and management reporting.</p>
         </div>
         <div class="grid-2">
@@ -561,13 +600,20 @@
             <p>Led practical digitalisation and process-improvement initiatives including structured online records, staff training registers, QR-based SOP access, operational dashboards, IoT architecture and audit-readiness improvements.</p>
           </div>
         </div>
+        <div class="hero-metrics">
+          <div class="hero-metric"><strong>8+ Years</strong><span>Telecom & project delivery</span></div>
+          <div class="hero-metric"><strong>300+ Sites</strong><span>Audit & reconciliation work</span></div>
+          <div class="hero-metric"><strong>7 Countries</strong><span>Regional engineering exposure</span></div>
+          <div class="hero-metric"><strong>Multi-Discipline</strong><span>Telecom • fibre • power • digital</span></div>
+        </div>
       </div>
     </section>
 
-    <section id="experience">
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1200 54" preserveAspectRatio="none"><path class="dline" d="M0 30 C180 6 320 48 510 23 S860 8 1200 26"/><path class="dline2" d="M0 40 C210 18 360 50 600 31 S910 18 1200 40"/><circle cx="185" cy="18" r="3"/><circle class="green-dot" cx="606" cy="31" r="3"/><circle cx="1018" cy="20" r="3"/></svg></div>
+    <section id="experience" class="section-shell white">
       <div class="container">
         <div class="section-head">
-          <div><h2>Professional Experience</h2></div>
+          <div><div class="section-mini-graphic"><span></span>Engineering Portfolio</div><h2>Professional Experience</h2></div>
           <p>Project leadership, telecommunications engineering, network planning, systems implementation and operational transformation.</p>
         </div>
 
@@ -688,10 +734,11 @@
       </div>
     </section>
 
-    <section id="projects">
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1200 54" preserveAspectRatio="none"><path class="dline" d="M0 30 C180 6 320 48 510 23 S860 8 1200 26"/><path class="dline2" d="M0 40 C210 18 360 50 600 31 S910 18 1200 40"/><circle cx="185" cy="18" r="3"/><circle class="green-dot" cx="606" cy="31" r="3"/><circle cx="1018" cy="20" r="3"/></svg></div>
+    <section id="projects" class="section-shell alt">
       <div class="container">
         <div class="section-head">
-          <div><h2>Selected Projects & Career Highlights</h2></div>
+          <div><div class="section-mini-graphic"><span></span>Engineering Portfolio</div><h2>Selected Projects & Career Highlights</h2></div>
           <p>Representative work spanning large-scale telecommunications delivery, digital operations, RF and fibre planning, IoT, electrical infrastructure and commercial analysis.</p>
         </div>
         <div class="grid-3">
@@ -864,10 +911,11 @@
       </div>
     </section>
 
-    <section id="skills">
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1200 54" preserveAspectRatio="none"><path class="dline" d="M0 30 C180 6 320 48 510 23 S860 8 1200 26"/><path class="dline2" d="M0 40 C210 18 360 50 600 31 S910 18 1200 40"/><circle cx="185" cy="18" r="3"/><circle class="green-dot" cx="606" cy="31" r="3"/><circle cx="1018" cy="20" r="3"/></svg></div>
+    <section id="skills" class="section-shell white">
       <div class="container">
         <div class="section-head">
-          <div><h2>Core Expertise & Technical Toolkit</h2></div>
+          <div><div class="section-mini-graphic"><span></span>Engineering Portfolio</div><h2>Core Expertise & Technical Toolkit</h2></div>
           <p>Project, telecommunications, analytics, software and engineering capabilities reflected in the current CV.</p>
         </div>
         <div class="skills-wrap">
@@ -899,10 +947,11 @@
       </div>
     </section>
 
-    <section id="education">
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1200 54" preserveAspectRatio="none"><path class="dline" d="M0 30 C180 6 320 48 510 23 S860 8 1200 26"/><path class="dline2" d="M0 40 C210 18 360 50 600 31 S910 18 1200 40"/><circle cx="185" cy="18" r="3"/><circle class="green-dot" cx="606" cy="31" r="3"/><circle cx="1018" cy="20" r="3"/></svg></div>
+    <section id="education" class="section-shell bluewash">
       <div class="container">
         <div class="section-head">
-          <div><h2>Education, Memberships & Professional Development</h2></div>
+          <div><div class="section-mini-graphic"><span></span>Engineering Portfolio</div><h2>Education, Memberships & Professional Development</h2></div>
           <p>Academic qualifications, engineering memberships and current professional-development credentials.</p>
         </div>
 
@@ -1183,10 +1232,11 @@
       </div>
     </section>
 
-    <section id="regional">
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1200 54" preserveAspectRatio="none"><path class="dline" d="M0 30 C180 6 320 48 510 23 S860 8 1200 26"/><path class="dline2" d="M0 40 C210 18 360 50 600 31 S910 18 1200 40"/><circle cx="185" cy="18" r="3"/><circle class="green-dot" cx="606" cy="31" r="3"/><circle cx="1018" cy="20" r="3"/></svg></div>
+    <section id="regional" class="section-shell white">
       <div class="container">
         <div class="section-head">
-          <div><h2>Regional Experience</h2></div>
+          <div><div class="section-mini-graphic"><span></span>Engineering Portfolio</div><h2>Regional Experience</h2></div>
           <p>Worked across multi-country engineering environments with field teams, telecom infrastructure owners, service providers and senior stakeholders.</p>
         </div>
 
@@ -1200,12 +1250,12 @@
                 </filter>
               </defs>
 
-              <rect width="1100" height="610" fill="#081522"/>
-              <text x="36" y="44" fill="#edf5ff" font-size="28" font-weight="800">Regional Engineering Footprint</text>
-              <text x="36" y="70" fill="#a9bbcf" font-size="14">Project delivery, telecommunications engineering, infrastructure planning and field coordination</text>
+              <rect width="1100" height="610" fill="#eaf3f8"/>
+              <text x="36" y="44" fill="#10243a" font-size="28" font-weight="800">Regional Engineering Footprint</text>
+              <text x="36" y="70" fill="#5f7387" font-size="14">Project delivery, telecommunications engineering, infrastructure planning and field coordination</text>
 
               <!-- Real world map: public-domain / CC0 Wikimedia Commons map -->
-              <rect x="28" y="90" width="1044" height="492" rx="18" fill="#0a1b2c" stroke="#203b58"/>
+              <rect x="28" y="90" width="1044" height="492" rx="18" fill="#dfeaf2" stroke="#b7ccda"/>
               <image class="real-world-map" href="https://commons.wikimedia.org/wiki/Special:Redirect/file/BlankMap-Equirectangular.svg" x="40" y="100" width="1020" height="516" preserveAspectRatio="none"/>
 
               <!-- Routes between regions -->
@@ -1290,10 +1340,11 @@
       </div>
     </section>
 
-    <section id="contact">
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1200 54" preserveAspectRatio="none"><path class="dline" d="M0 30 C180 6 320 48 510 23 S860 8 1200 26"/><path class="dline2" d="M0 40 C210 18 360 50 600 31 S910 18 1200 40"/><circle cx="185" cy="18" r="3"/><circle class="green-dot" cx="606" cy="31" r="3"/><circle cx="1018" cy="20" r="3"/></svg></div>
+    <section id="contact" class="section-shell alt">
       <div class="container">
         <div class="section-head">
-          <div><h2>Contact</h2></div>
+          <div><div class="section-mini-graphic"><span></span>Engineering Portfolio</div><h2>Contact</h2></div>
           <p>Open to discussions about engineering, telecommunications, infrastructure and project-management opportunities.</p>
         </div>
         <div class="contact-card">
