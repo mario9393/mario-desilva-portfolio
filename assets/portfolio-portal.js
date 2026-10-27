@@ -98,20 +98,25 @@
     const readyWordsTop=all('.ms-portal-ready-title--top .ms-word');
     const readyWordsBottom=all('.ms-portal-ready-title--bottom .ms-word');
     const tlReady=gsap.timeline({paused:true});
-    const fadeIn=(selector,at) => tlReady.fromTo(selector,{opacity:0,filter:'blur(10px)',y:10},{opacity:1,filter:'blur(0px)',y:0,duration:.6,clearProps:'filter',ease:'power2.out'},at);
-    tlReady.fromTo('.ms-portal-network',{opacity:0},{opacity:1,duration:.5,ease:'power1.out'},0);
-    tlReady.fromTo('.ms-portal-network-float',{rotationY:-65,rotation:14,scale:.76,filter:'blur(14px) brightness(1.35)'},{rotationY:0,rotation:0,scale:1,filter:'blur(0px) brightness(1)',duration:1.3,ease:'power3.out',clearProps:'filter'},0);
-    tlReady.fromTo(readyWordsTop,{opacity:0,filter:'blur(12px)',yPercent:25},{opacity:1,filter:'blur(0px)',yPercent:0,stagger:.09,duration:.7,ease:'power2.out',clearProps:'filter,transform'},.16);
-    tlReady.fromTo(readyWordsBottom,{opacity:0,filter:'blur(12px)',yPercent:25},{opacity:1,filter:'blur(0px)',yPercent:0,stagger:.09,duration:.7,ease:'power2.out',clearProps:'filter,transform'},.3);
-    tlReady.to('.ms-portal-watermark',{opacity:1,duration:1},.4);
-    fadeIn('.ms-portal-more',.55);
-    fadeIn('.ms-portal-ready-copy',.66);
-    fadeIn('.ms-portal-ready-action',.77);
-    fadeIn('.ms-portal-scroll',.9);
-    if (!reduced) {
+    if (reduced) {
+      // Accessible motion preference: simple crossfade with no blur, rotation or float.
+      tlReady.to(
+        [...readyWordsTop,...readyWordsBottom,...all('.ms-portal-network, .ms-portal-watermark, .ms-portal-more, .ms-portal-ready-copy, .ms-portal-ready-action, .ms-portal-scroll')],
+        {opacity:1,duration:.4,ease:'power1.out'},0
+      );
+    } else {
+      const fadeIn=(selector,at) => tlReady.fromTo(selector,{opacity:0,filter:'blur(10px)',y:10},{opacity:1,filter:'blur(0px)',y:0,duration:.6,clearProps:'filter',ease:'power2.out'},at);
+      tlReady.fromTo('.ms-portal-network',{opacity:0},{opacity:1,duration:.5,ease:'power1.out'},0);
+      tlReady.fromTo('.ms-portal-network-float',{rotationY:-65,rotation:14,scale:.76,filter:'blur(14px) brightness(1.35)'},{rotationY:0,rotation:0,scale:1,filter:'blur(0px) brightness(1)',duration:1.3,ease:'power3.out',clearProps:'filter'},0);
+      tlReady.fromTo(readyWordsTop,{opacity:0,filter:'blur(12px)',yPercent:25},{opacity:1,filter:'blur(0px)',yPercent:0,stagger:.09,duration:.7,ease:'power2.out',clearProps:'filter,transform'},.16);
+      tlReady.fromTo(readyWordsBottom,{opacity:0,filter:'blur(12px)',yPercent:25},{opacity:1,filter:'blur(0px)',yPercent:0,stagger:.09,duration:.7,ease:'power2.out',clearProps:'filter,transform'},.3);
+      tlReady.to('.ms-portal-watermark',{opacity:1,duration:1},.4);
+      fadeIn('.ms-portal-more',.55);
+      fadeIn('.ms-portal-ready-copy',.66);
+      fadeIn('.ms-portal-ready-action',.77);
+      fadeIn('.ms-portal-scroll',.9);
       gsap.to('.ms-portal-network-face',{y:-8,rotation:1,duration:3.2,yoyo:true,repeat:-1,ease:'sine.inOut'});
     }
-    let pointerX=null, pointerY=null;
     if (!reduced && hasHover) {
       const rotateY=gsap.quickTo('.ms-portal-network-face','rotationY',{duration:.8,ease:'power2.out'});
       const rotateX=gsap.quickTo('.ms-portal-network-face','rotationX',{duration:.8,ease:'power2.out'});
@@ -134,8 +139,6 @@
       }
       const turn=inOut(segment(p,.06,.44));
       const grow=Math.pow(segment(p,.44,.83),3);
-      const bounds=portal.getBoundingClientRect();
-      const target=Math.max(innerWidth/Math.max(bounds.width,200),innerHeight/Math.max(bounds.height,300))*2.4;
       // getBoundingClientRect grows as we scale; use the natural element size, not rendered size.
       const naturalW=portal.offsetWidth || 250, naturalH=portal.offsetHeight || 400;
       const scaleTo=Math.max(innerWidth/naturalW,innerHeight/naturalH)*2.4;
