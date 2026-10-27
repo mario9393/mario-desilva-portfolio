@@ -1,0 +1,128 @@
+
+/* Mario Shyomal De Silva — engineering portal intro.
+   All selectors are namespaced to leave the existing portfolio untouched. */
+#ms-portal-root{--ms-blue:#99b6d2;--ms-ink:#151d2a;--ms-ease:cubic-bezier(.22,1,.36,1);font-family:Geist,Inter,system-ui,sans-serif;color:#fff;position:relative;isolation:isolate}
+#ms-portal-root *,#ms-portal-root *::before,#ms-portal-root *::after{box-sizing:border-box}
+#ms-portal-root section{padding:0}
+#ms-portal-root a{color:inherit;text-decoration:none}
+#ms-portal-root button{font:inherit}
+html.ms-portal-loading{overflow:hidden!important}
+.ms-portal-stage{height:100svh;min-height:480px;position:relative;overflow:hidden;background:#fff;isolation:isolate}
+.ms-portal-media,.ms-portal-over,.ms-portal-copy,.ms-portal-ready{position:absolute;inset:0}
+.ms-portal-media{z-index:1;overflow:hidden;transform-origin:50% 50%;transform:scale(0)}
+.ms-portal-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 44%;display:block;will-change:transform}
+.ms-portal-tint{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,13,24,.85) 0%,rgba(8,23,37,.64) 38%,rgba(6,25,41,.3) 75%),linear-gradient(0deg,rgba(2,9,17,.72),transparent 45%),linear-gradient(180deg,rgba(5,17,30,.42),transparent 45%)}
+.ms-portal-mesh{position:absolute;inset:0;opacity:.21;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(90deg,transparent 5%,#000 86%)}
+.ms-portal-photo-caption{position:absolute;right:24px;bottom:24px;letter-spacing:.13em;font-size:10px;text-transform:uppercase;color:rgba(255,255,255,.64)}
+.ms-portal-over{z-index:4;pointer-events:none;perspective:1300px}
+.ms-portal-glass{position:absolute;left:61%;top:49%;width:clamp(205px,19.5vw,290px);height:clamp(325px,46vw,444px);transform-style:preserve-3d;transform-origin:center center;border-radius:25px;border:2px solid rgba(255,255,255,.55);background:linear-gradient(140deg,rgba(244,252,255,.18),rgba(162,198,225,.02) 45%,rgba(153,182,210,.11));box-shadow:inset 0 1px 18px rgba(255,255,255,.23),0 20px 70px rgba(0,0,0,.28);backdrop-filter:blur(5px);will-change:transform}
+.ms-portal-glass::before{content:"";position:absolute;inset:-2px;border-radius:inherit;border:2px solid #fff;box-shadow:0 0 24px rgba(255,255,255,.8),inset 0 0 15px rgba(255,255,255,.45);opacity:0;pointer-events:none}
+.ms-portal-glass.ms-glow::before{opacity:1}
+.ms-portal-glass-label{position:absolute;top:24px;left:24px;display:flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.2em;font-weight:500}
+.ms-portal-glass-label i{display:inline-flex;align-items:center;justify-content:center;font-style:normal;width:36px;height:36px;border-radius:12px;border:1px solid rgba(255,255,255,.7);font-size:16px;font-weight:500}
+.ms-portal-signal{position:absolute;inset:20% 12%;display:grid;place-items:center}
+.ms-portal-signal svg{width:100%;height:100%;overflow:visible;opacity:.76}
+.ms-portal-signal circle{fill:none;stroke:rgba(245,252,255,.75);stroke-width:1.6;stroke-dasharray:5 5}
+.ms-portal-signal .ms-core{fill:#fff;stroke:none;filter:drop-shadow(0 0 12px white)}
+.ms-portal-glass-caption{position:absolute;left:24px;right:24px;bottom:24px;font-size:10px;letter-spacing:.2em;line-height:1.8;color:rgba(255,255,255,.92)}
+.ms-portal-glass-fill{position:absolute;inset:-2px;border-radius:inherit;background:#fff;opacity:0;box-shadow:0 0 35px rgba(255,255,255,.8);pointer-events:none}
+.ms-portal-copy{z-index:2;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:clamp(24px,3vw,42px) clamp(24px,4vw,62px) 8.1vh;pointer-events:none}
+.ms-portal-copy>*{pointer-events:auto}
+.ms-portal-kicker{display:inline-flex;align-items:center;gap:10px;font-size:clamp(10px,.91vw,14px);font-weight:400;letter-spacing:.15em;text-transform:uppercase;margin-bottom:20px;opacity:0}
+.ms-portal-kicker::before{content:"";height:9px;width:9px;background:#fff;border-radius:2px}
+.ms-portal-headline{font-weight:400!important;font-size:clamp(54px,6.5vw,100px)!important;line-height:.99!important;letter-spacing:-.045em!important;max-width:850px;margin:0!important;color:#fff!important}
+.ms-portal-headline .ms-portal-line{display:block}
+.ms-portal-headline .ms-word,.ms-portal-ready-title .ms-word{display:inline-block;will-change:transform,opacity}
+.ms-portal-headline .ms-word{opacity:0}
+.ms-portal-bottom{display:flex;justify-content:space-between;align-items:flex-end;width:100%;gap:28px;margin-top:32px}
+.ms-portal-actions{display:flex;gap:11px;align-items:center;flex-wrap:wrap;opacity:0}
+.ms-portal-button{height:47px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 21px;border-radius:100px;font-size:14px;font-weight:500;white-space:nowrap;transition:transform .2s var(--ms-ease),background .2s var(--ms-ease)}
+.ms-portal-button:hover{transform:scale(1.035)}
+.ms-portal-button--light{color:#151d2a!important;background:#fff}
+.ms-portal-button--outline{color:#fff!important;border:1px solid rgba(255,255,255,.62);background:rgba(255,255,255,.06)}
+.ms-portal-lead{max-width:390px;margin:0!important;font-size:clamp(15px,1.3vw,19px)!important;font-weight:400;line-height:1.42!important;color:rgba(255,255,255,.9)!important;letter-spacing:-.012em;opacity:0}
+.ms-portal-nav{position:absolute;z-index:12;top:0;left:0;right:0;height:82px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 clamp(24px,3vw,42px);color:#fff;opacity:0;transition:color .4s var(--ms-ease)}
+.ms-portal-nav.ms-dark{color:var(--ms-ink)}
+.ms-portal-brand{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:500;letter-spacing:.12em;white-space:nowrap}
+.ms-portal-monogram{display:grid;place-items:center;width:37px;height:37px;border:1px solid currentColor;border-radius:12px;font-size:15px;letter-spacing:-.07em}
+.ms-portal-navlinks{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:27px;align-items:center;padding:13px 22px;border-radius:100px;background:rgba(168,168,168,.18);backdrop-filter:blur(20px);box-shadow:inset 0 2px 2px rgba(255,255,255,.25);font-size:13px;font-weight:300}
+.ms-portal-navlinks a{transition:opacity .2s}
+.ms-portal-navlinks a:hover{opacity:.55}
+.ms-portal-navcta{padding:10px 17px;border:1px solid currentColor;border-radius:100px;font-size:13px;font-weight:400;white-space:nowrap;transition:transform .2s}
+.ms-portal-navcta:hover{transform:scale(1.03)}
+.ms-portal-ready{background:#fff;color:var(--ms-ink);z-index:6;visibility:hidden;opacity:0;overflow:hidden}
+.ms-portal-watermark{position:absolute;z-index:0;left:2%;right:2%;top:43%;transform:translateY(-50%);font-weight:500;font-size:clamp(105px,17vw,320px);letter-spacing:-.075em;white-space:nowrap;text-align:center;color:rgba(153,182,210,.105);user-select:none;pointer-events:none;opacity:0}
+.ms-portal-ready-title{position:absolute;z-index:2;font-weight:400!important;font-size:clamp(49px,6.15vw,96px)!important;line-height:1!important;letter-spacing:-.045em!important;margin:0!important;white-space:nowrap;color:#151d2a!important}
+.ms-portal-ready-title--top{top:22%;left:3%;transform:translateY(-50%)}
+.ms-portal-ready-title--bottom{right:3%;top:68%;transform:translateY(-50%)}
+.ms-portal-ready-title .ms-word{opacity:0}
+.ms-portal-network{position:absolute;left:50%;top:43%;width:min(66vw,900px);aspect-ratio:1.77;transform:translate(-50%,-50%);z-index:1;perspective:1400px;opacity:0;pointer-events:none}
+.ms-portal-network-float{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.ms-portal-network-face{position:absolute;inset:0;border-radius:28px;border:1px solid rgba(255,255,255,.72);background:radial-gradient(circle at 24% 14%,rgba(255,255,255,.9),transparent 35%),linear-gradient(142deg,#d9eafa,#a4c5e5 50%,#6c9bc4);box-shadow:0 35px 80px rgba(41,82,118,.22),inset 0 2px 2px rgba(255,255,255,.75);overflow:hidden}
+.ms-portal-network-face::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.09) 0 1px,transparent 1px 32px),repeating-linear-gradient(90deg,rgba(255,255,255,.09) 0 1px,transparent 1px 32px);mask-image:linear-gradient(90deg,#000,transparent 98%)}
+.ms-portal-network-top{position:absolute;top:8%;left:6%;right:6%;display:flex;justify-content:space-between;align-items:center;color:#173c60;font-size:clamp(10px,.9vw,14px);font-weight:500;letter-spacing:.15em}
+.ms-portal-network-logo{display:flex;gap:10px;align-items:center}
+.ms-portal-network-logo b{display:grid;place-items:center;width:32px;height:32px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.85);border-radius:10px;letter-spacing:-.05em}
+.ms-portal-network-lines{position:absolute;inset:13% 9% 17%;width:82%;height:70%;overflow:visible;filter:drop-shadow(0 0 5px rgba(255,255,255,.25))}
+.ms-portal-network-lines path{fill:none;stroke:rgba(255,255,255,.65);stroke-width:2}
+.ms-portal-network-lines circle{fill:#fff;stroke:#4c84b0;stroke-width:2}
+.ms-portal-network-stats{position:absolute;left:6%;right:6%;bottom:7%;display:flex;justify-content:space-between;gap:12px;color:#173c60}
+.ms-portal-network-stat strong{font-size:clamp(15px,2vw,29px);display:block;font-weight:500;line-height:1.1}
+.ms-portal-network-stat span{font-size:clamp(7px,.8vw,12px);text-transform:uppercase;letter-spacing:.11em}
+.ms-portal-more{position:absolute;right:3%;top:16%;z-index:3;display:flex;align-items:center;gap:7px;padding:10px 15px;background:#99b6d2;color:#fff!important;border-radius:100px;font-size:13px;opacity:0}
+.ms-portal-ready-copy{position:absolute;left:3%;bottom:13%;z-index:3;width:min(395px,36vw);font-size:clamp(15px,1.25vw,20px);line-height:1.36;letter-spacing:-.012em;opacity:0}
+.ms-portal-ready-action{position:absolute;bottom:5%;left:3%;z-index:3;background:#161616;color:#fff!important;border-radius:100px;padding:13px 21px;font-size:14px;font-weight:400;opacity:0;transition:transform .2s}
+.ms-portal-ready-action:hover{transform:scale(1.03)}
+.ms-portal-scroll{position:absolute;right:3%;bottom:5%;color:#717171;font-size:16px;z-index:3;opacity:0}
+.ms-portal-loader{position:absolute;inset:0;z-index:14;background:#fff;display:flex;align-items:center;justify-content:center;color:#151515}
+.ms-portal-loader-word{position:absolute;font-size:clamp(125px,28vw,500px);line-height:.8;letter-spacing:-.12em;color:rgba(153,182,210,.15);font-weight:500;user-select:none}
+.ms-portal-loader-num{font-size:27px;font-variant-numeric:tabular-nums;font-weight:400;z-index:1}
+.ms-portal-loader-num span{display:inline-block;min-width:2ch;text-align:right}
+.ms-portal-cursor{position:fixed;top:-40px;left:-40px;width:32px;height:32px;z-index:1000;border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.20);border-radius:50%;backdrop-filter:blur(4px) brightness(.82);pointer-events:none;opacity:0;transition:opacity .2s linear}
+@media (hover:hover) and (pointer:fine){body:has(#ms-portal-root) .ms-portal-stage,body:has(#ms-portal-root) .ms-portal-stage a,body:has(#ms-portal-root) .ms-portal-stage button{cursor:none}}
+@media (max-width:1023px){
+ .ms-portal-nav{padding:0 20px;height:72px}
+ .ms-portal-navlinks{display:none}
+ .ms-portal-brand{font-size:11px;gap:8px;letter-spacing:.04em}
+ .ms-portal-monogram{width:33px;height:33px}
+ .ms-portal-navcta{font-size:12px;padding:8px 13px}
+ .ms-portal-copy{padding:0 20px 36px;justify-content:flex-start}
+ .ms-portal-kicker{margin-top:100px;margin-bottom:19px;font-size:10px;max-width:355px;line-height:1.5}
+ .ms-portal-headline{font-size:clamp(44px,11.3vw,70px)!important;line-height:1.02!important;max-width:570px}
+ .ms-portal-bottom{margin-top:auto;display:flex;flex-direction:column-reverse;align-items:stretch;gap:18px;width:100%}
+ .ms-portal-lead{max-width:450px;font-size:clamp(14px,4vw,17px)!important}
+ .ms-portal-actions{display:flex}
+ .ms-portal-actions .ms-portal-button{flex:1;font-size:13px;padding:0 12px}
+ .ms-portal-glass{left:52%;top:53%;width:min(40vw,240px);height:min(50vh,330px);border-radius:22px}
+ .ms-portal-glass-label{top:16px;left:15px;font-size:9px}
+ .ms-portal-glass-label i{width:27px;height:27px;font-size:12px}
+ .ms-portal-glass-caption{left:15px;bottom:15px;font-size:8px}
+ .ms-portal-photo{object-position:center}
+ .ms-portal-tint{background:linear-gradient(180deg,rgba(6,25,42,.70) 0%,rgba(7,20,34,.17) 42%,rgba(0,11,21,.86) 100%)}
+ .ms-portal-photo-caption{display:none}
+ .ms-portal-ready-title{font-size:clamp(36px,9.2vw,65px)!important;white-space:normal;max-width:91vw;line-height:1.03!important}
+ .ms-portal-ready-title--top{top:18%;left:5%}
+ .ms-portal-ready-title--bottom{top:63%;right:5%;text-align:right;max-width:92vw}
+ .ms-portal-watermark{top:44%;font-size:27vw}
+ .ms-portal-network{width:min(92vw,700px);top:43%}
+ .ms-portal-more{top:23%;right:5%}
+ .ms-portal-ready-copy{left:5%;bottom:16%;width:90%;max-width:480px;font-size:15px}
+ .ms-portal-ready-action{left:5%;right:5%;bottom:5%;text-align:center}
+ .ms-portal-scroll{display:none}
+}
+@media (max-width:420px) and (max-height:740px){
+ .ms-portal-kicker{margin-top:81px}
+ .ms-portal-headline{font-size:clamp(38px,10vw,46px)!important}
+ .ms-portal-glass{height:min(42vh,250px);top:50%}
+ .ms-portal-ready-title--top{top:17%}
+ .ms-portal-ready-title--bottom{top:60%}
+ .ms-portal-ready-copy{bottom:15%;font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){
+ .ms-portal-glass,.ms-portal-photo,.ms-portal-network-float{transition:none!important;animation:none!important}
+ .ms-portal-cursor{display:none}
+ .ms-portal-loader-num,.ms-portal-loader-word{display:none}
+}
+@media print{
+ #ms-portal-root{display:none!important}
+}
